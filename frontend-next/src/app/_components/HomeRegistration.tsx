@@ -2,9 +2,10 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { RegisterInput } from '@/components/ui/RegisterInput';
+import { InputText } from '@/components/ui/InputText';
 import { Checkbox } from '@/components/ui/Checkbox';
-import { Button } from '@/components/ui/Button';
+import { ButtonPrimaryOnLight } from '@/components/ui/ButtonPrimaryOnLight';
+import { IconArrowRight } from '@/components/ui/icons/IconArrowRight';
 
 /**
  * HomeRegistration section implementing the "Register your business" form.
@@ -12,7 +13,7 @@ import { Button } from '@/components/ui/Button';
  */
 export default function HomeRegistration() {
     return (
-        <section className="bg-grey100 py-[60px] px-6 md:px-12 lg:px-[40px] flex justify-center overflow-visible">
+        <section className="bg-grey50 py-[60px] px-6 md:px-12 lg:px-[40px] flex justify-center overflow-visible">
             {/* Decorative center wrapper to allow icon overflow */}
             <div className="relative w-full max-w-[900px] mt-12 md:mt-0">
 
@@ -47,50 +48,43 @@ export default function HomeRegistration() {
 
                         {/* Name Fields (2 columns) */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <RegisterInput
+                            <InputText
                                 label="First Name"
-                                variant="blue"
                                 placeholder="Daniel"
                             />
-                            <RegisterInput
+                            <InputText
                                 label="Last Name"
-                                variant="blue"
                                 placeholder="Works"
                             />
                         </div>
 
                         {/* Email and Mobile (2 columns) */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                            <RegisterInput
+                            <InputText
                                 label="Work Email"
-                                variant="pink"
                                 placeholder="daniel@gmail.com"
-                                helperText="it should be an organisation email"
+                            // helperText="it should be an organisation email"
                             />
-                            <RegisterInput
+                            <InputText
                                 label="Mobile Number"
-                                variant="grey"
-                                placeholder="0000 000 000"
+                                placeholder="+01 234 567 890"
                             />
                         </div>
 
                         {/* Leaderboard Alias */}
-                        <RegisterInput
+                        <InputText
                             label="Leaderboard Alias"
-                            variant="grey"
                             placeholder="Pick a fun alias. Inappropriate names may be removed or lead to disqualification."
                         />
 
                         {/* Company Info (2 columns) */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <RegisterInput
+                            <InputText
                                 label="Company Name"
-                                variant="grey"
                                 placeholder="Input"
                             />
-                            <RegisterInput
+                            <InputText
                                 label="Company ABN Number"
-                                variant="grey"
                                 placeholder="Must contain 11 digits"
                             />
                         </div>
@@ -116,19 +110,16 @@ export default function HomeRegistration() {
                             </div>
                         </div>
 
-                        {/* Other Input & RTA Number */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <RegisterInput
+
+                            <InputText
                                 label="If Other"
-                                variant="grey"
                                 placeholder="Input"
                             />
-                            <RegisterInput
+                            <InputText
                                 label="Refrigerant Trading Authorisation (RTA) number (AU Licence Number)"
-                                variant="grey"
                                 placeholder="AU-00000"
                             />
-                        </div>
+
 
                         {/* Confirmation Statements */}
                         <div className="flex flex-col gap-6 pt-2">
@@ -141,9 +132,11 @@ export default function HomeRegistration() {
 
                         {/* Submit Button */}
                         <div className="flex justify-center pt-4">
-                            <Button className="w-full md:w-fit px-8 py-4 rounded-full">
+                            <ButtonPrimaryOnLight
+                                className="w-full md:w-fit py-4 rounded-full"
+                            >
                                 Join the challenge
-                            </Button>
+                            </ButtonPrimaryOnLight>
                         </div>
 
                     </form>

@@ -8,7 +8,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 100%;
-    letter-spacing: -3px;
+    letter-spacing: -3%;
   }
 
   /* Heading/L/Bold */
@@ -18,7 +18,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 100%;
-    letter-spacing: -3px;
+    letter-spacing: -3%;
   }
 
   /* Heading/M/Bold */
@@ -28,7 +28,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 100%;
-    letter-spacing: -3px;
+    letter-spacing: -3%;
   }
 
   /* Heading/S/Bold */
@@ -38,7 +38,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 100%;
-    letter-spacing: -3px;
+    letter-spacing: -3%;
   }
 
   /* Heading/XS/Bold */
@@ -48,7 +48,17 @@
     font-style: normal;
     font-weight: 700;
     line-height: 100%;
-    letter-spacing: -3px;
+    letter-spacing: -3%;
+  }
+
+  /* Heading/XS/Regular */
+  .HeadingXSRegular {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -2%;
   }
 
   /* --- Content --- */
@@ -83,6 +93,16 @@
     letter-spacing: 0px;
   }
 
+  /* Content/L/Regular */
+  .ContentLRegular {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -0.36px;
+  }
+
   /* Content/M/Bold */
   .ContentMBold {
     font-family: 'Open Sans', sans-serif;
@@ -101,5 +121,25 @@
     font-weight: 700;
     line-height: 130%;
     letter-spacing: 0px;
+  }
+
+  /* Content/M/Regular */
+  .ContentMRegular {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -2%;
+  }
+
+  /* Content/S/Regular */
+  .ContentSRegular {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -2%;
   }
 }

@@ -1,11 +1,12 @@
 import React from 'react';
-import { FAQCard } from '../_block/FAQCard';
+import { FAQCard } from '@/components/ui/FAQCard';
 
 /**
- * HomeFAQsection implementing the Frequently Asked Questions block.
+ * FAQSection implementing the Frequently Asked Questions block.
  * Based on Figma node 307:6118.
+ * Shared component used in Homepage and Terms & Conditions.
  */
-export default function HomeFAQsection() {
+export default function FAQSection() {
   const faqData = [
     {
       question: "How do you track what I return?",
@@ -30,9 +31,9 @@ export default function HomeFAQsection() {
   ];
 
   return (
-    <section className="bg-grey50 py-16 lg:py-20 px-6 md:px-12 lg:px-[80px]">
-      <div className="container mx-auto max-w-[1440px] flex flex-col gap-16 items-center">
-
+    <section id="faqs" className="bg-white py-16 lg:py-20">
+      <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-[80px] flex flex-col gap-16 items-center">
+        
         {/* Heading Section */}
         <div className="max-w-[774px] w-full text-center">
           <h2 className="HeadingMBold text-blue950">
@@ -40,15 +41,29 @@ export default function HomeFAQsection() {
           </h2>
         </div>
 
-        {/* FAQ Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-x-[24px] lg:gap-y-[16px] w-full items-start">
-          {faqData.map((item, index) => (
-            <FAQCard
-              key={index}
-              question={item.question}
-              answer={item.answer}
-            />
-          ))}
+        {/* FAQ Independent Columns */}
+        <div className="flex flex-col lg:flex-row gap-6 w-full items-start">
+          {/* Left Column (Indices 0, 1, 2) */}
+          <div className="flex flex-col gap-[16px] flex-1 w-full">
+            {faqData.slice(0, 3).map((item, index) => (
+              <FAQCard 
+                key={index}
+                question={item.question}
+                answer={item.answer}
+              />
+            ))}
+          </div>
+
+          {/* Right Column (Indices 3, 4) */}
+          <div className="flex flex-col gap-[16px] flex-1 w-full">
+            {faqData.slice(3).map((item, index) => (
+              <FAQCard 
+                key={index + 3}
+                question={item.question}
+                answer={item.answer}
+              />
+            ))}
+          </div>
         </div>
 
       </div>

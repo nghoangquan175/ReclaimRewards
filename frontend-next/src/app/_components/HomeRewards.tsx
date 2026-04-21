@@ -1,6 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
 import { RewardCard } from '../_block/RewardCard';
+import featuredIcon from '@/assets/icons/featured_seasonal_and_gifts.svg';
+import airlineIcon from '@/assets/icons/airline_seat_recline_extra.svg';
+import flagIcon from '@/assets/icons/flag.svg';
 
 /**
  * HomeRewards section implementing the "Rewards at a glance" block.
@@ -8,28 +11,28 @@ import { RewardCard } from '../_block/RewardCard';
  */
 export default function HomeRewards() {
   return (
-    <section className="bg-white py-20 px-6 md:px-12 lg:px-20 overflow-hidden">
-      <div className="container mx-auto max-w-[1440px] flex flex-col gap-12">
-        
+    <section id="rewards" className="bg-grey50 py-15 overflow-hidden">
+      <div className="container relative mx-auto max-w-[1440px] px-6 md:px-12 lg:px-[80px] flex flex-col gap-12">
+
         {/* Heading Section */}
         <div className="flex flex-col gap-6 max-w-2xl">
           <h2 className="HeadingLBold text-blue950">
             Rewards at a glance
           </h2>
-          <p className="text-blue950 text-[24px] font-normal leading-tight tracking-[-3%]">
-            Every kilogram above last year's total counts.
+          <p className="HeadingXSBold text-blue950">
+            Every kilogram above last year&apos;s total counts.
           </p>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch ">
+
           {/* Card 1: Reward Points */}
-          <RewardCard 
-            iconSrc="/images/reward-steps/card-1.svg" 
+          <RewardCard
+            iconSrc={featuredIcon}
             title="Reward points earn on every extra kg"
           >
-            <ul className="list-disc flex flex-col gap-4">
+            <ul className="list-disc flex flex-col">
               <li className="ms-6">
                 1 kg returned above baseline = 1 point.
               </li>
@@ -47,11 +50,11 @@ export default function HomeRewards() {
           </RewardCard>
 
           {/* Card 2: Travel Incentives */}
-          <RewardCard 
-            iconSrc="/images/reward-steps/card-2.svg" 
+          <RewardCard
+            iconSrc={airlineIcon}
             title="Travel incentives for top performers"
           >
-            <ul className="list-disc flex flex-col gap-4">
+            <ul className="list-disc flex flex-col">
               <li className="ms-6">
                 Return 1,000 kg and the business qualify for a chance to go to Japan with A-Gas.
               </li>
@@ -62,11 +65,11 @@ export default function HomeRewards() {
           </RewardCard>
 
           {/* Card 3: Grand Prize */}
-          <RewardCard 
-            iconSrc="/images/reward-steps/card-3.svg" 
+          <RewardCard
+            iconSrc={flagIcon}
             title="Grand prize: the ultimate reward"
           >
-            <ul className="list-disc flex flex-col gap-4">
+            <ul className="list-disc flex flex-col">
               <li className="ms-6">
                 Return the highest volume over the baseline and your business will qualify to fly business class for the 2027/28 incentive trip.
               </li>
@@ -74,16 +77,17 @@ export default function HomeRewards() {
           </RewardCard>
 
           {/* Image Column */}
-          <div className="relative h-[400px] lg:h-full min-h-[300px] flex items-end justify-center lg:justify-end">
-             {/* Simple decorative background for the mascot */}
-            <div className="absolute inset-0 bg-blue50 rounded-[24px] -z-10" />
-            <Image 
-              src="/images/reward-steps/mascot-reggie.png" 
-              alt="Reclaim Rewards Mascot" 
-              width={555} 
-              height={517}
-              className="object-contain object-bottom h-[110%] w-auto absolute bottom-0 right-[-20%] lg:right-[-40%]"
-            />
+          <div className="relative flex items-end justify-center lg:justify-end overflow-visible">
+            <div className="absolute top-[-70px] left-[-135px] w-[270px] md:w-[337px] lg:w-[555px] h-auto pointer-events-none select-none">
+              <Image
+                src="/images/reggie-pose-b.png"
+                alt="Reggie Mascot"
+                width={555}
+                height={517}
+                priority
+                className="w-full h-full object-contain object-bottom scale-110 origin-bottom-right lg:scale-100"
+              />
+            </div>
           </div>
 
         </div>

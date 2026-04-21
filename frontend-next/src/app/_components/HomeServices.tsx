@@ -1,6 +1,6 @@
 import React from 'react';
 import { ServiceCard } from '../_block/ServiceCard';
-import { Button } from '@/components/ui/Button';
+import { ButtonPrimaryOnLight } from '@/components/ui/ButtonPrimaryOnLight';
 
 /**
  * HomeServices section implementing the "How it works" block.
@@ -29,27 +29,19 @@ export default function HomeServices() {
   ];
 
   return (
-    <section className="bg-grey50 py-20 px-6 md:px-12 lg:px-20">
-      <div className="container mx-auto max-w-[1440px] flex flex-col gap-12">
-        
-        {/* Header Section */}
+    <section id="how-it-works" className="bg-grey50 pt-20 pb-15">
+      <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-[80px] flex flex-col gap-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 overflow-hidden">
           <h2 className="HeadingLBold text-blue950 max-w-xl">
             How it works
           </h2>
-          <Button 
-            variant="primary" 
-            theme="on-light" 
-            icon="arrow_forward"
-          >
+          <ButtonPrimaryOnLight>
             Register your business
-          </Button>
+          </ButtonPrimaryOnLight>
         </div>
-
-        {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {steps.map((item) => (
-            <ServiceCard 
+            <ServiceCard
               key={item.step}
               step={item.step}
               title={item.title}

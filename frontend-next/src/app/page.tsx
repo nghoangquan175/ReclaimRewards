@@ -4,7 +4,7 @@ import HomeServices from './_components/HomeServices';
 import HomeRewards from './_components/HomeRewards';
 import HomeBenefit from './_components/HomeBenefit';
 import HomeEligibility from './_components/HomeEligibility';
-import HomeFAQsection from './_components/HomeFAQsection';
+import FAQSection from '@/components/sections/FAQSection';
 import HomeRegistration from './_components/HomeRegistration';
 
 export default function Home() {
@@ -25,11 +25,12 @@ export default function Home() {
       {/* Eligibility Section */}
       <HomeEligibility />
 
-      {/* FAQ Section */}
-      <HomeFAQsection />
-
       {/* Registration Form Section */}
       <HomeRegistration />
+
+      {/* FAQ Section */}
+      <FAQSection />
+
     </div>
   );
 }

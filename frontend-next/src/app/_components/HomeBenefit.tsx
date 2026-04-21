@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { Button } from '@/components/ui/Button';
+import { ButtonPrimaryOnLight } from '@/components/ui/ButtonPrimaryOnLight';
 
 /**
  * HomeBenefit section implementing the program benefits and "Do it properly" call to action.
@@ -16,10 +16,10 @@ export default function HomeBenefit() {
   ];
 
   return (
-    <section className="bg-grey50 py-[60px] px-6 md:px-12 lg:px-[80px]">
-      <div className="container mx-auto max-w-[1440px]">
-        <div className="bg-white flex flex-col lg:flex-row items-center justify-between gap-10 p-8 lg:px-[40px] lg:py-[30px] rounded-[24px] min-h-[566px] overflow-hidden">
-          
+    <section className="bg-grey50 py-15">
+      <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-[80px]">
+        <div className="bg-white flex flex-col lg:flex-row items-center justify-between gap-10 p-[30px] rounded-[24px] min-h-[566px] overflow-hidden">
+
           {/* Left: Text Content */}
           <div className="flex flex-col flex-1 gap-8 lg:gap-[32px] items-start justify-between h-full">
             <div className="flex flex-col gap-8 items-start w-full">
@@ -29,19 +29,19 @@ export default function HomeBenefit() {
               </h2>
 
               {/* Features List */}
-              <ul className="flex flex-col gap-4 w-full">
+              <ul className="flex flex-col gap-[10px] w-full">
                 {features.map((feature, index) => (
-                  <li key={index} className="flex gap-4 items-center">
+                  <li key={index} className="flex gap-[14px] items-center">
                     <div className="bg-magenta600 flex items-center justify-center rounded-full size-5 shrink-0">
-                      <Image 
-                        src="/images/tick-magenta.svg" 
-                        alt="Tick" 
-                        width={15} 
+                      <Image
+                        src="/images/tick-magenta.svg"
+                        alt="Tick"
+                        width={15}
                         height={15}
-                        className="invert"
+                        className="brightness-0 invert"
                       />
                     </div>
-                    <p className="text-grey950 text-[16px] font-normal leading-tight tracking-[-2%]">
+                    <p className="ContentMRegular text-grey950">
                       {feature}
                     </p>
                   </li>
@@ -58,43 +58,40 @@ export default function HomeBenefit() {
               </div>
             </div>
 
-            <Button 
-              variant="primary" 
-              theme="on-light" 
-              icon="arrow_forward"
+            <ButtonPrimaryOnLight
               className="mt-4 lg:mt-8"
             >
               Register your business
-            </Button>
+            </ButtonPrimaryOnLight>
           </div>
 
           {/* Right: Decorative Image */}
           <div className="relative w-full lg:w-[553px] h-[300px] lg:h-[478px] rounded-[24px] overflow-hidden">
-            {/* Main Illustration */}
-            <Image 
-              src="/images/benefit-main.png" 
-              alt="Program Benefits Illustration" 
-              fill
-              className="object-cover"
-              priority
-            />
 
-            {/* Decorative Vectors - Absolute positioned based on Figma design */}
-            <div className="absolute top-[46%] left-[-4%] w-[100%] h-[100%] pointer-events-none opacity-60">
-               <Image 
-                src="/images/benefit-vector-1.svg" 
-                alt="" 
-                width={300}
-                height={300}
+            <div className="absolute top-[-222px] left-[-288px] w-[1200px] h-[900px]">
+              <Image
+                src="/images/benefit-main.png"
+                alt="Program Benefits Illustration"
+                width={1200}
+                height={900}
+                className="object-cover"
+              />
+            </div>
+            <div className="absolute top-[235px] left-[-24px] w-[1074px] h-[443px] pointer-events-none opacity-50">
+              <Image
+                src="/images/benefit-vector-1.svg"
+                alt=""
+                width={1074}
+                height={443}
                 className="w-auto h-auto"
               />
             </div>
-            <div className="absolute bottom-[-10%] right-[-10%] w-[100%] h-[100%] pointer-events-none opacity-40">
-               <Image 
-                src="/images/benefit-vector-2.svg" 
-                alt="" 
-                width={300}
-                height={300}
+            <div className="absolute top-[391px] left-[-387px] w-[1101px] h-[364px] pointer-events-none opacity-50">
+              <Image
+                src="/images/benefit-vector-2.svg"
+                alt=""
+                width={1101}
+                height={364}
                 className="w-auto h-auto"
               />
             </div>
