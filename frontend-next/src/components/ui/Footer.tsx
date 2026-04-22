@@ -78,12 +78,12 @@ const Footer = () => {
           </ButtonPrimaryOnDark>
 
           {/* Legal Links & Copyright */}
-          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 text-[14px] md:text-[16px]">
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 opacity-80">
             <div className="flex gap-8 ContentSBold">
-              <Link href="/terms-conditions" className="hover:opacity-80 transition-opacity">Terms & Conditions</Link>
-              <Link href="/privacy" className="hover:opacity-80 transition-opacity">Privacy Policy</Link>
+              <Link href="/terms-conditions" className="cursor-pointer">Terms & Conditions</Link>
+              <Link href="/privacy" className="cursor-pointer">Privacy Policy</Link>
             </div>
-            <p className="ContentSBold opacity-80">
+            <p className="ContentSBold">
               © 2026 A-Gas All right Reserved
             </p>
           </div>

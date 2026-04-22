@@ -7,12 +7,12 @@ export default function TermsConditionsPage() {
   return (
     <main className="flex flex-col w-full">
       <TermsConsBanner />
-      
+
       {/* Terms Content */}
       <TermsConsContent />
 
       {/* Shared FAQ Section */}
-      <FAQSection />
+      {/* <FAQSection /> */}
     </main>
   );
 }

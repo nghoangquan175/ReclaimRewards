@@ -9,7 +9,19 @@ export default function TermsConsBanner() {
     return (
         <section className="bg-magenta600 relative w-full min-h-[400px] lg:h-[480px] overflow-hidden flex items-end">
             {/* Background/Layout Container */}
-            <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-[80px] w-full h-full relative flex items-end pb-[60px] lg:pb-[114px]">
+            <div className="container mx-auto max-w-[1440px] px-[80px] pb-[68px] w-full h-full relative flex items-end">
+
+                {/* Large Logo */}
+                <div className="absolute top-10 left-6 md:left-12 lg:left-20 w-[240px] md:w-[320px] lg:w-[407.71px] lg:h-[100px] z-[60]">
+                    <Image
+                        src="/images/logo-white.svg"
+                        alt="Reclaim Rewards Logo Large"
+                        width={407}
+                        height={100}
+                        priority
+                        className="w-full h-full object-contain"
+                    />
+                </div>
 
                 {/* Title Content */}
                 <div className="relative z-10 w-full">
@@ -19,9 +31,9 @@ export default function TermsConsBanner() {
                 </div>
 
                 {/* Mascot Illustration (Reggie) */}
-                <div className="absolute top-[38px] left-[807px] w-[300px] md:w-[450px] lg:w-[582px] h-auto pointer-events-none select-none">
+                <div className="absolute top-[38px] left-[807px] w-[582px] h-auto pointer-events-none select-none">
                     <Image
-                        src="/images/reggie-pose-b.png"
+                        src="/images/reggie-pose-b2.png"
                         alt="Reggie Mascot"
                         width={582}
                         height={562}
