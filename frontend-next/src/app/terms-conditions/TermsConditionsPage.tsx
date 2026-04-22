@@ -12,7 +12,10 @@ export default function TermsConditionsPage() {
       <TermsConsContent />
 
       {/* Shared FAQ Section */}
-      <FAQSection />
+      <div className="lg:hidden">
+
+        <FAQSection />
+      </div>
     </main>
   );
 }

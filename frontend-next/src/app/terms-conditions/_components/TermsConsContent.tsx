@@ -6,11 +6,11 @@ import React from 'react';
  */
 export default function TermsConsContent() {
   return (
-    <section className="bg-grey50 md:bg-white py-[60px] md:py-20">
-      <div className="container mx-auto max-w-[1440px] px-8 md:px-100 flex justify-center">
+    <section className="bg-grey50 lg:bg-white py-[60px] lg:py-20">
+      <div className="container mx-auto max-w-[1440px] px-8 md:px-20 lg:px-100 flex justify-center">
 
         {/* --- DESKTOP CONTENT --- */}
-        <div className="hidden md:flex flex-col gap-10 text-grey950">
+        <div className="hidden lg:flex flex-col gap-10 text-grey950">
 
           {/* Promoter */}
           <div className="flex flex-col gap-6">
@@ -509,7 +509,7 @@ export default function TermsConsContent() {
         </div>
 
         {/* --- MOBILE CONTENT --- */}
-        <div className="flex md:hidden flex-col gap-6 text-grey950">
+        <div className="flex lg:hidden flex-col gap-6 text-grey950">
 
           {/* Promoter */}
           <div className="flex flex-col gap-6">

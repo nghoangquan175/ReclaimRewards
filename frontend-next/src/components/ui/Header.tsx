@@ -71,7 +71,7 @@ const Header = () => {
           </Link>
 
           {/* Navigation Links - Desktop */}
-          <div className="hidden md:flex items-center gap-2 lg:gap-5">
+          <div className="hidden lg:flex items-center gap-2 lg:gap-5">
             <Link
               href="/#how-it-works"
               onClick={(e) => scrollToSection(e, 'how-it-works')}
@@ -101,8 +101,8 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <div className="md:hidden cursor-pointer flex items-center" onClick={toggleMenu}>
+          {/* Mobile/Tablet Menu Toggle */}
+          <div className="lg:hidden cursor-pointer flex items-center" onClick={toggleMenu}>
             <span className="material-symbols-outlined text-white text-[32px]">
               {isMenuOpen ? 'close' : 'menu'}
             </span>
@@ -110,61 +110,62 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile/Tablet Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-magenta600 transition-opacity duration-300 md:hidden flex flex-col ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        className={`fixed inset-0 z-40 bg-magenta600 transition-opacity duration-300 lg:hidden flex flex-col ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
           }`}
       >
-        <div className="flex flex-col h-full pt-[80px] gap-10 px-6">
+        <div className="flex flex-col h-full pt-[80px] md:pt-[92px] gap-10 px-6 md:pb-15 md:px-10">
           <nav className="flex flex-col w-full border-t border-white/20">
             <Link
               href="/#how-it-works"
               onClick={(e) => handleMobileLinkClick(e, 'how-it-works')}
-              className="py-[17px] border-b border-white/20 ContentMBold text-white"
+              className="py-[17px] md:py-[22px] border-b border-white/20 ContentMBold text-white"
             >
               How it works
             </Link>
             <Link
               href="/#rewards"
               onClick={(e) => handleMobileLinkClick(e, 'rewards')}
-              className="py-[17px] border-b border-white/20 ContentMBold text-white"
+              className="py-[17px] md:py-[22px] border-b border-white/20 ContentMBold text-white"
             >
               Rewards
             </Link>
             <Link
               href="/#why-join"
               onClick={(e) => handleMobileLinkClick(e, 'why-join')}
-              className="py-[17px] border-b border-white/20 ContentMBold text-white"
+              className="py-[17px] md:py-[22px] border-b border-white/20 ContentMBold text-white"
             >
               Why Join
             </Link>
             <Link
               href="/#faqs"
               onClick={(e) => handleMobileLinkClick(e, 'faqs')}
-              className="py-[17px] border-b border-white/20 ContentMBold text-white"
+              className="py-[17px] md:py-[22px] border-b border-white/20 ContentMBold text-white"
             >
               FAQs
             </Link>
           </nav>
 
           {/* Bottom Visual */}
-          <div className="mt-auto relative w-full h-[385px] mb-[-1px]">
+          <div className="mt-auto relative w-full h-[385px] md:h-[518px] mb-[-1px]">
             {/* Background */}
-            <div className="absolute inset-0 top-[38px] bottom-[0px] rounded-tl-[24px] rounded-tr-[24px] overflow-hidden">
+            <div className="absolute inset-0 top-[38px] md:top-[136px] bottom-0 md:bottom-[98px] rounded-tl-[24px] rounded-tr-[24px] md:rounded-[32px] overflow-hidden">
               <Image
                 src="/images/hero-bg.webp"
                 alt="Background"
-                fill
-                className="object-cover"
+                width={1390}
+                height={781}
+                className="object-cover absolute w-[1390px] h-[781px] top-[-450px] md:top-[-495px]"
               />
             </div>
             {/* Mascot */}
             <div className="absolute inset-0 flex justify-center">
               <Image
-                src="/images/notification-mascot.png"
+                src="/images/RR_Reggie_Pose_a31.png"
                 alt="Reggie Mascot"
-                width={327}
-                height={385}
+                width={440}
+                height={518}
                 className="h-full w-auto object-contain"
               />
             </div>
