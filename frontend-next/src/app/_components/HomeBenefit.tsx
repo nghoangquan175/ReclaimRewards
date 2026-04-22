@@ -16,7 +16,7 @@ export default function HomeBenefit() {
   ];
 
   return (
-    <section className="bg-grey50 py-15">
+    <section id="why-join" className="bg-grey50 py-15">
       <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-[80px]">
         <div className="bg-white flex flex-col lg:flex-row items-center justify-between gap-10 p-[30px] rounded-[24px] min-h-[566px] overflow-hidden">
 

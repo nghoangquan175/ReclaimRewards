@@ -6,11 +6,11 @@ import React from 'react';
  */
 export default function TermsConsContent() {
   return (
-    <section className="bg-white py-20">
-      <div className="container mx-auto max-w-[1440px] px-100 flex justify-center">
+    <section className="bg-grey50 md:bg-white py-[60px] md:py-20">
+      <div className="container mx-auto max-w-[1440px] px-8 md:px-100 flex justify-center">
 
-        {/* Content Column - Centered with large horizontal padding on desktop to match Figma px-[400px] */}
-        <div className="flex flex-col gap-10 text-grey950">
+        {/* --- DESKTOP CONTENT --- */}
+        <div className="hidden md:flex flex-col gap-10 text-grey950">
 
           {/* Promoter */}
           <div className="flex flex-col gap-6">
@@ -507,6 +507,104 @@ export default function TermsConsContent() {
           </div>
 
         </div>
+
+        {/* --- MOBILE CONTENT --- */}
+        <div className="flex md:hidden flex-col gap-6 text-grey950">
+
+          {/* Promoter */}
+          <div className="flex flex-col gap-6">
+            <h4 className="ContentLBold">Promoter</h4>
+            <p className="ContentLRegular">
+              A-Gas (Australia) Pty Limited (ABN 18 066 273 247), 9 -11 Oxford Road, Laverton North, VIC 3026.
+            </p>
+          </div>
+
+          {/* Registration Period */}
+          <div className="flex flex-col gap-6">
+            <h4 className="ContentLBold">Registration Period</h4>
+            <p className="ContentLRegular">
+              12.01am (AEST) on 01/05/2026 to 11.59pm (AEST) on 30/06/2026.
+            </p>
+          </div>
+
+          {/* Return Period */}
+          <div className="flex flex-col gap-6">
+            <h4 className="ContentLBold">Return Period</h4>
+            <p className="ContentLRegular">
+              12.01am (AEST) on 01/07/2026 to 11.59pm (AEST) on 30/06/2027.
+            </p>
+          </div>
+
+          {/* Who can enter? */}
+          <div className="flex flex-col gap-6">
+            <h4 className="ContentLBold">Who can enter?</h4>
+            <div className="flex flex-col gap-6 ContentLRegular">
+              <p>Only Australian residents who:</p>
+              <ul className="flex flex-col gap-6 px-4 list-none">
+                <li><span className="ContentLBold">(a) </span>are aged 18 or over;</li>
+                <li><span className="ContentLBold">(b) </span>have an Australian Business with a valid ABN;</li>
+                <li><span className="ContentLBold">(c) </span>are licensed air-conditioning and refrigeration businesses operating within Australia (with a Refrigerant Trading Authorisation/Australian Licence no.);</li>
+                <li><span className="ContentLBold">(d) </span>are successfully registered to take part in the A-Gas Reclaim Rewards Program <span className="ContentLBold">(Program)</span> and have an account with a participating channel partner; and</li>
+                <li><span className="ContentLBold">(e) </span>can travel to Tokyo, Japan to take a Tier 2/Tier 3 prize in 2027/2028 (exact dates to be confirmed by the Promoter).</li>
+                <p>(each, an eligible <span className="ContentLBold">Participating Business).</span></p>
+              </ul>
+              <p>
+                Participation in the Program does not alter or replace any existing reclaim program arrangements between Participating Businesses and their wholesaler partners.
+              </p>
+              <p>
+                All existing terms and conditions, and operational processes that apply to a Participating Business’ existing refrigerant reclaim programs with the wholesaler will continue to apply throughout the duration of the Program, except where explicitly stated otherwise within the relevant terms.
+              </p>
+            </div>
+          </div>
+
+          {/* Who can't enter? */}
+          <div className="flex flex-col gap-6">
+            <h4 className="ContentLBold">Who can't enter?</h4>
+            <div className="flex flex-col gap-6 ContentLRegular">
+              <p>Directors, officers, management and employees of:</p>
+              <ul className="flex flex-col gap-6 px-4 list-none">
+                <li><span className="ContentLBold">(a) </span>the Promoter; and</li>
+                <li><span className="ContentLBold">(b) </span>the agencies, companies or participating premises associated with the Program</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Where will the competition run? */}
+          <div className="flex flex-col gap-6">
+            <h4 className="ContentLBold">Where will the competition run?</h4>
+            <div className="flex flex-col gap-6 ContentLRegular">
+              <p>
+                The Program will run through an approved channel partners (such as Reece Group via Actrol and Reece HVAC stores) and Airefrig Australia in Australia <span className="ContentLBold">(Channel Partners).</span>
+              </p>
+              <p>For clarity, a Participating Business:</p>
+              <ul className="flex flex-col gap-6 px-10 list-disc">
+                <li>must have an account with a Channel Partner to return reclaimed refrigerant (Reclaimed Refrigerant) to qualify for the Program. Where the Participating Business does not have an existing account, they must create one before returning the Reclaimed Refrigerant; and</li>
+                <li>may return Reclaimed Refrigerant through more than one Channel Partner.</li>
+              </ul>
+              <p>
+                Where the Participating Business returns Reclaimed Refrigerant through more than one Channel Partner, it is the Participating Business’ responsibility to ensure that the account holder and relevant account holder details are the same, accurate, and up to date for each Channel Partner.
+              </p>
+              <p>
+                The Promoter may add additional Channel Partners at their discretion and will notify any Participating Business via email.
+              </p>
+            </div>
+          </div>
+
+          {/* Website */}
+          <div className="flex flex-col gap-6">
+            <h4 className="ContentLBold">Website</h4>
+            <a
+              href="https://reclaimrewards.agas.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ContentLRegular text-[#ec008c] underline"
+            >
+              https://reclaimrewards.agas.com/
+            </a>
+          </div>
+
+        </div>
+
       </div>
     </section>
   );

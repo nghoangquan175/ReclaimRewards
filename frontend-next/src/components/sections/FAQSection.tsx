@@ -31,21 +31,24 @@ export default function FAQSection() {
   ];
 
   return (
-    <section id="faqs" className="bg-white py-16 lg:py-20">
-      <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-[80px] flex flex-col gap-16 items-center">
+    <section id="faqs" className="bg-white py-10 lg:py-20">
+      <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-[80px] flex flex-col gap-10 lg:gap-16 items-start lg:items-center">
         
         {/* Heading Section */}
-        <div className="max-w-[774px] w-full text-center">
-          <h2 className="HeadingMBold text-blue950">
+        <div className="w-full lg:max-w-[774px] text-left lg:text-center">
+          <h2 className="HeadingMBold lg:HeadingLBold text-blue950 hidden lg:block">
+            Frequently Asked Questions
+          </h2>
+          <h2 className="HeadingSBold text-blue950 lg:hidden">
             Frequently Asked Questions
           </h2>
         </div>
 
-        {/* FAQ Independent Columns */}
-        <div className="flex flex-col lg:flex-row gap-6 w-full items-start">
-          {/* Left Column (Indices 0, 1, 2) */}
-          <div className="flex flex-col gap-[16px] flex-1 w-full">
-            {faqData.slice(0, 3).map((item, index) => (
+        {/* FAQ Columns: 1 col on mobile/tablet, 2 cols on lg */}
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 w-full items-start">
+          {/* Mobile view: Simple list of all FAQs */}
+          <div className="flex lg:hidden flex-col gap-4 w-full">
+            {faqData.map((item, index) => (
               <FAQCard 
                 key={index}
                 question={item.question}
@@ -54,16 +57,27 @@ export default function FAQSection() {
             ))}
           </div>
 
-          {/* Right Column (Indices 3, 4) */}
-          <div className="flex flex-col gap-[16px] flex-1 w-full">
-            {faqData.slice(3).map((item, index) => (
-              <FAQCard 
-                key={index + 3}
-                question={item.question}
-                answer={item.answer}
-              />
-            ))}
-          </div>
+          {/* Desktop view: Split into two columns */}
+          <>
+            <div className="hidden lg:flex flex-col gap-[16px] flex-1 w-full">
+              {faqData.slice(0, 3).map((item, index) => (
+                <FAQCard 
+                  key={index}
+                  question={item.question}
+                  answer={item.answer}
+                />
+              ))}
+            </div>
+            <div className="hidden lg:flex flex-col gap-[16px] flex-1 w-full">
+              {faqData.slice(3).map((item, index) => (
+                <FAQCard 
+                  key={index + 3}
+                  question={item.question}
+                  answer={item.answer}
+                />
+              ))}
+            </div>
+          </>
         </div>
 
       </div>
