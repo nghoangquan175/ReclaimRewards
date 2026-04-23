@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import reggiePoseB3 from '@/assets/images/RR_Reggie_Pose_b3.png';
 import logoWhite from '@/assets/icons/logo-white.svg';
 
@@ -9,7 +10,7 @@ export default function TermsConsBanner() {
             <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-[80px] pb-0 lg:pb-[60px] w-full h-full relative flex flex-col lg:flex-row items-center lg:items-end">
 
                 {/* Large Logo - Hidden on mobile/tablet */}
-                <div className="hidden lg:block absolute top-10 left-6 md:left-12 lg:left-20 w-[240px] md:w-[320px] lg:w-[407.71px] lg:h-[100px] z-[60]">
+                <Link href="/" className="hidden lg:block absolute top-10 left-6 md:left-12 lg:left-20 w-[240px] md:w-[320px] lg:w-[407.71px] lg:h-[100px] z-[60]">
                     <Image
                         src={logoWhite}
                         alt="Reclaim Rewards Logo Large"
@@ -18,7 +19,7 @@ export default function TermsConsBanner() {
                         priority
                         className="w-full h-full object-contain"
                     />
-                </div>
+                </Link>
 
                 {/* Title Content */}
                 <div className="relative z-10 w-full text-center lg:text-left mb-6 md:mb-10 lg:mb-0 md:mt-6 lg:mt-0">

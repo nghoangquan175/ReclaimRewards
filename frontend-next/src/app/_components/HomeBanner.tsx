@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import logoWhite from '@/assets/icons/logo-white.svg';
 import reggieWithCylinder from '@/assets/images/RR_Reggie_Pose_a31.png';
 import japanPortal from '@/assets/images/tower-circle.jpg';
@@ -19,7 +20,7 @@ export default function HomeBanner() {
         <div className="relative z-60 w-[425px] h-[400px] lg:absolute lg:top-0 lg:left-[80px] lg:h-full flex flex-col items-center lg:items-start text-center lg:text-left py-10 lg:py-10 justify-between">
 
           {/* Logo (Figma node 675:2549) */}
-          <div className="relative w-[240px] md:w-[320px] lg:w-[407.71px] h-[60px] md:h-[80px] lg:h-[100px] shrink-0">
+          <Link href="/" className="relative w-[240px] md:w-[320px] lg:w-[407.71px] h-[60px] md:h-[80px] lg:h-[100px] shrink-0 block">
             <Image
               src={logoWhite}
               alt="Reclaim Rewards Logo"
@@ -29,7 +30,7 @@ export default function HomeBanner() {
               className="w-full h-auto object-contain object-left"
               style={{ height: 'auto' }}
             />
-          </div>
+          </Link>
 
           {/* Headline (Figma node 675:2565) */}
           <h1 className="HeadingXSBold text-white">
