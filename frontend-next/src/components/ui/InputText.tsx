@@ -69,7 +69,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
         rounded: 'rounded-[8px]',
         text: 'text-grey950',
         label: 'text-grey950',
-        placeholder: 'placeholder:text-grey400',
+        placeholder: 'placeholder:text-grey800',
         icon: 'text-grey950',
       },
       Filled: {

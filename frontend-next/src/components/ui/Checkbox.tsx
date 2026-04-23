@@ -15,7 +15,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
   ({ className, label, disabled, ...props }, ref) => {
     return (
       <label className={`
-        flex gap-3.5 items-start 
+        flex gap-3.5
         ${disabled ? 'cursor-not-allowed' : 'cursor-pointer group'}
       `}>
         <div className="relative flex items-center justify-center pt-0.5">
@@ -29,12 +29,12 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           {/* Custom Checkbox Box */}
           <div className={`
             size-5 rounded-[4px] border transition-all duration-300 ease-out
-            ${disabled 
-              ? 'bg-grey100 border-grey400' 
+            ${disabled
+              ? 'bg-grey100 border-grey400'
               : 'bg-blue50 border-blue950 peer-checked:bg-blue950'
             }
           `} />
-          
+
           {/* Checkmark Icon */}
           <svg
             className={`
@@ -55,12 +55,12 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           </svg>
         </div>
         {label && (
-          <span className={`
-            ContentMRegular select-none transition-colors duration-300
+          <div className={`
+            ContentMRegular flex items-center select-none transition-colors duration-300
             ${disabled ? 'text-grey400' : 'text-grey950'}
           `}>
             {label}
-          </span>
+          </div>
         )}
       </label>
     );
