@@ -1,53 +1,71 @@
+'use client';
+
 import React from 'react';
-import { ServiceCard } from '../_block/ServiceCard';
-import { ButtonPrimaryOnLight } from '@/components/ui/ButtonPrimaryOnLight';
+import { InfoCard } from '@/components/ui/InfoCard';
+import { ButtonSecondary } from '@/components/ui/ButtonSecondary';
+import { scrollToSection } from '@/lib/utils';
+import step1 from '@/assets/icons/step_1.svg';
+import step2 from '@/assets/icons/step_2.svg';
+import step3 from '@/assets/icons/step_3.svg';
 
 /**
- * HomeServices section implementing the "How it works" block.
- * Based on Figma node 307:5665.
+ * HomeServices section implementing the "How it Works" block.
+ * Uses the InfoCard component and ButtonSecondary as per latest instructions.
  */
 export default function HomeServices() {
   const steps = [
     {
       step: 1,
-      title: 'Register',
-      description: 'Scan the QR or hit the button. Register your business during May and June 2026.',
-      iconSrc: '/images/service-steps/step-1.png',
+      title: 'Register your business',
+      description: 'Sign up to the program by providing your business details.',
+      iconSrc: step1,
+      showButton: true,
     },
     {
       step: 2,
-      title: 'Recover and return',
-      description: 'Return refrigerant via participating wholesalers (Airefrig Australia and Actrol) between 1 July 2026 and 30 June 2027.',
-      iconSrc: '/images/service-steps/step-2.png',
+      title: 'Return to wholesalers',
+      description: 'Drop off recovered refrigerant at participating wholesalers.',
+      iconSrc: step2,
+      showButton: false,
     },
     {
       step: 3,
       title: 'Earn rewards',
-      description: 'Every extra kg earns points. Return more to unlock travel incentives.',
-      iconSrc: '/images/service-steps/step-3.png',
+      description: 'You can then earn points, and even unlock a trip to Japan',
+      iconSrc: step3,
+      showButton: false,
     },
   ];
 
   return (
-    <section id="how-it-works" className="bg-grey50 pt-20 pb-15">
+    <section id="how-it-works" className="bg-grey100 pt-20 pb-15">
       <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-[80px] flex flex-col gap-12">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 overflow-hidden">
-          <h2 className="HeadingLBold text-blue950 max-w-xl">
-            How it works
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6 overflow-hidden">
+          <h2 className="HeadingLBold text-blue950 text-center">
+            How it Works
           </h2>
-          <ButtonPrimaryOnLight>
-            Register your business
-          </ButtonPrimaryOnLight>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {steps.map((item) => (
-            <ServiceCard
+            <InfoCard
               key={item.step}
               step={item.step}
               title={item.title}
               description={item.description}
               iconSrc={item.iconSrc}
-            />
+            >
+              {item.showButton && (
+                <div className="flex justify-center w-full">
+                  <ButtonSecondary 
+                    className="w-full"
+                    onClick={() => scrollToSection('registration')}
+                  >
+                    Join The Challenge
+                  </ButtonSecondary>
+                </div>
+              )}
+            </InfoCard>
           ))}
         </div>
       </div>

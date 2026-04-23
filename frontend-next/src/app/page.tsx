@@ -2,9 +2,10 @@ import React from 'react';
 import HomeBanner from './_components/HomeBanner';
 import HomeServices from './_components/HomeServices';
 import HomeRewards from './_components/HomeRewards';
-import HomeBenefit from './_components/HomeBenefit';
 import HomeEligibility from './_components/HomeEligibility';
-import FAQSection from '@/components/sections/FAQSection';
+import HomeJapanTrip from './_components/HomeJapanTrip';
+import HomeSustainability from './_components/HomeSustainability';
+import HomeFAQsection from './_components/HomeFAQsection';
 import HomeRegistration from './_components/HomeRegistration';
 
 export default function Home() {
@@ -13,23 +14,26 @@ export default function Home() {
       {/* Hero Section */}
       <HomeBanner />
 
+      {/* Registration Form Section */}
+      <HomeRegistration />
+
       {/* Program Steps / Services Section */}
       <HomeServices />
 
       {/* Rewards Overview Section */}
       <HomeRewards />
 
-      {/* Benefits / Why Choose Section */}
-      <HomeBenefit />
-
       {/* Eligibility Section */}
       <HomeEligibility />
 
-      {/* Registration Form Section */}
-      <HomeRegistration />
+      {/* Japan Trip Details Section */}
+      <HomeJapanTrip />
+
+      {/* Sustainability / Why it Matters Section */}
+      <HomeSustainability />
 
       {/* FAQ Section */}
-      <FAQSection />
+      <HomeFAQsection />
 
     </div>
   );

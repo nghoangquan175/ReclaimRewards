@@ -2,30 +2,33 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import plusIcon from '@/assets/icons/faq-plus.svg';
 
 interface FAQCardProps {
   question: string;
   answer: string | React.ReactNode;
+  className?: string;
 }
 
 /**
  * Reusable FAQCard component with accordion expansion.
  * Standardized to match Figma node 317:12798.
  */
-export const FAQCard: React.FC<FAQCardProps> = ({ question, answer }) => {
+export const FAQCard: React.FC<FAQCardProps> = ({ question, answer, className = '' }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div
       className={`
-        bg-grey50 flex flex-col px-6 pt-6 rounded-[24px] w-full 
+        flex flex-col px-6 pt-6 rounded-[24px] w-full 
         transition-all duration-300 ease-[cubic-bezier(0,0,0.58,1)]
+        ${className || 'bg-grey50'}
       `}
     >
       <div className="flex justify-between items-center w-full gap-6 pb-6">
-        <h4 className="flex-1 ContentLBold text-[#1a1a1a] select-none">
+        <div className="flex-1 ContentLBold text-[#1a1a1a] select-none h-[36px] flex items-center">
           {question}
-        </h4>
+        </div>
         <button
           className={`
             bg-blue950 flex items-center justify-center rounded-full shrink-0 size-9 
@@ -36,7 +39,7 @@ export const FAQCard: React.FC<FAQCardProps> = ({ question, answer }) => {
           onClick={() => setIsOpen(!isOpen)}
         >
           <Image
-            src="/images/faq-plus.svg"
+            src={plusIcon}
             alt={isOpen ? "Collapse" : "Expand"}
             width={20}
             height={20}

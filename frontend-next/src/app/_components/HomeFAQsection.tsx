@@ -1,55 +1,70 @@
+'use client';
+
 import React from 'react';
-import { FAQCard } from '../_block/FAQCard';
+import FAQSection from '@/components/sections/FAQSection';
 
 /**
- * HomeFAQsection implementing the Frequently Asked Questions block.
- * Based on Figma node 307:6118.
+ * HomeFAQsection component for the homepage.
+ * Holds the specific FAQ data and uses the generic FAQSection for layout.
+ * Based on Figma node 675:3906.
  */
 export default function HomeFAQsection() {
   const faqData = [
     {
-      question: "How do you track what I return?",
-      answer: "We partner directly with participating wholesalers (Airefrig Australia and Actrol). When you return refrigerant under your registered business account, they log the volumes directly with the program team. Ensure you use your registered ABN for every transaction."
+      question: "What is the Reclaim Rewards program?",
+      answer: "Reclaim Rewards is an incentive program designed to reward HVAC-R businesses for returning recovered refrigerant. By achieving growth targets above your baseline, you can earn points redeemable for vouchers and qualify for major travel incentives."
     },
     {
-      question: "What refrigerants count?",
-      answer: "The program primarily counts high-GWP refrigerants eligible for reclaim. This includes common types like R410A, R404A, and R134a. Check our full Terms & Conditions for the specific list of accepted gases."
+      question: "Who can participate in the program?",
+      answer: "The program is open to all registered Australian businesses with a valid ABN and a current RTA AU licence. Participants must return refrigerant through participating wholesalers such as Airefrig Australia or Actrol."
     },
     {
-      question: "When will I hear back after registering?",
-      answer: "Once you register your business during May-June 2026, we will verify your details (ABN and RTA licence). You will receive a confirmation email within 5 business days, followed by your baseline volume notification."
+      question: "Is there a cost to participate?",
+      answer: "No, participation in the Reclaim Rewards program is completely free for eligible businesses. Simply register your business details to start tracking your returns and earning rewards."
     },
     {
-      question: "Who wins the Japan trip?",
-      answer: "Top-performing businesses that return at least 1,000 kg and show significant growth above their baseline. Five winners will be chosen for two spots each on the 2027/28 A-Gas incentive trip."
+      question: "How long does the program run?",
+      answer: "The current program period runs from 1 July 2026 to 30 June 2027. Registration typically occurs in the months leading up to the start of the return period."
     },
     {
-      question: "What if I don't hit the 20% growth baseline?",
-      answer: "While 20% growth is a requirement for Japan trip eligibility, you can still earn reward points for every extra kg returned above your baseline volume, provided you meet the minimum point threshold."
+      question: "When is the registration deadline?",
+      answer: "Businesses should register by 30 June 2026 to ensure all returns from the start of the program period are tracked correctly. Please check your confirmation email for specific verification deadlines."
+    },
+    {
+      question: "Where must refrigerant be returned?",
+      answer: "Refrigerant must be returned through participating wholesaler branches, specifically Airefrig Australia and Actrol. Ensure your returns are logged against your registered business ABN."
+    },
+    {
+      question: "What is the leaderboard?",
+      answer: "The leaderboard is a live ranking system that shows how your business compares to others in the program based on total reclaim volume and growth. Top performers on the leaderboard qualify for the Japan trip."
+    },
+    {
+      question: "What do participating businesses need to do?",
+      answer: "Participants need to register their business, recover refrigerant during their normal operations, and return it to participating wholesalers. No additional paperwork is required for tracking once registered."
+    },
+    {
+      question: "What happens if cylinders are returned outside participating wholesalers?",
+      answer: "Returns made to non-participating wholesalers or under different account details will not be tracked toward your Reclaim Rewards total or contribute to your growth target."
+    },
+    {
+      question: "Who should participants contact for help?",
+      answer: "For any questions regarding your registration, baseline volume, or point balance, please contact the Reclaim Rewards program team via the contact form or through your local A-Gas representative."
     }
   ];
 
   return (
-    <section className="bg-grey50 py-16 lg:py-20 px-6 md:px-12 lg:px-[80px]">
-      <div className="container mx-auto max-w-[1440px] flex flex-col gap-16 items-center">
+    <section id="faqs" className="bg-white py-[60px]">
+      <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-[80px] flex flex-col gap-10 md:gap-[60px] lg:gap-16 items-center">
 
         {/* Heading Section */}
         <div className="max-w-[774px] w-full text-center">
-          <h2 className="HeadingMBold text-blue950">
+          <h2 className="HeadingMBold text-[#001a77]">
             Frequently Asked Questions
           </h2>
         </div>
 
-        {/* FAQ Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-x-[24px] lg:gap-y-[16px] w-full items-start">
-          {faqData.map((item, index) => (
-            <FAQCard
-              key={index}
-              question={item.question}
-              answer={item.answer}
-            />
-          ))}
-        </div>
+        {/* FAQ Layout Section with Data */}
+        <FAQSection items={faqData} cardClassName="bg-grey50" />
 
       </div>
     </section>

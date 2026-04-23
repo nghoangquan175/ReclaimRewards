@@ -4,10 +4,12 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import reggiePoseA31 from '@/assets/images/RR_Reggie_Pose_a31.png';
+import heroBG from '@/assets/images/hero-bg.webp';
 
 /**
  * Header component for Reclaim Rewards.
- * Based on Figma node 319:15530.
+ * Refactored to remove the logo (now in the Banner) while maintaining the nav items' position.
  */
 const Header = () => {
   const pathname = usePathname();
@@ -54,48 +56,36 @@ const Header = () => {
     <>
       <header className={`absolute top-0 left-0 w-full z-50 bg-magenta600 transition-all duration-300 ${isMenuOpen ? 'rounded-none' : 'rounded-bl-[24px] rounded-br-[24px]'}`}>
         <div className="max-w-[1440px] mx-auto h-[72px] px-6 md:px-10 lg:px-20 flex items-center justify-between">
-          {/* Logo */}
-          <Link
-            href="/"
-            className={`flex-shrink-0 transition-opacity hover:opacity-90 ${pathname === '/terms-conditions' ? 'invisible pointer-events-none' : ''}`}
-            onClick={closeMenu}
-          >
-            <Image
-              src="/images/logo-white.svg"
-              alt="Reclaim Rewards Logo"
-              width={163}
-              height={40}
-              className="h-8 md:h-10 w-auto"
-              priority
-            />
-          </Link>
+          
+          {/* Logo Placeholder - Keeps nav items pushed to the right */}
+          <div className="flex-shrink-0 w-[163px] h-[40px] invisible pointer-events-none" aria-hidden="true" />
 
           {/* Navigation Links - Desktop */}
-          <div className="hidden lg:flex items-center gap-2 lg:gap-5">
+          <div className="hidden lg:flex items-center gap-2 lg:gap-10">
             <Link
               href="/#how-it-works"
               onClick={(e) => scrollToSection(e, 'how-it-works')}
-              className="px-3 py-2 ContentMBold text-white whitespace-nowrap"
+              className="px-3 py-2 ContentMBold text-white whitespace-nowrap hover:opacity-80 transition-opacity"
             >
               How It Works
             </Link>
             <Link
               href="/#rewards"
               onClick={(e) => scrollToSection(e, 'rewards')}
-              className="px-3 py-2 ContentMBold text-white whitespace-nowrap"
+              className="px-3 py-2 ContentMBold text-white whitespace-nowrap hover:opacity-80 transition-opacity"
             >
               Rewards
             </Link>
             <Link
               href="/#faqs"
               onClick={(e) => scrollToSection(e, 'faqs')}
-              className="px-3 py-2 ContentMBold text-white whitespace-nowrap"
+              className="px-3 py-2 ContentMBold text-white whitespace-nowrap hover:opacity-80 transition-opacity"
             >
               FAQs
             </Link>
             <Link
               href="/terms-conditions"
-              className="px-3 py-2 ContentMBold text-white whitespace-nowrap"
+              className="px-3 py-2 ContentMBold text-white whitespace-nowrap hover:opacity-80 transition-opacity"
             >
               T&Cs
             </Link>
@@ -152,7 +142,7 @@ const Header = () => {
             {/* Background */}
             <div className="absolute inset-0 top-[38px] md:top-[136px] bottom-0 md:bottom-[98px] rounded-tl-[24px] rounded-tr-[24px] md:rounded-[32px] overflow-hidden">
               <Image
-                src="/images/hero-bg.webp"
+                src={heroBG}
                 alt="Background"
                 width={1390}
                 height={781}
@@ -162,7 +152,7 @@ const Header = () => {
             {/* Mascot */}
             <div className="absolute inset-0 flex justify-center">
               <Image
-                src="/images/RR_Reggie_Pose_a31.png"
+                src={reggiePoseA31}
                 alt="Reggie Mascot"
                 width={440}
                 height={518}

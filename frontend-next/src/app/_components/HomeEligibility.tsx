@@ -1,109 +1,177 @@
+'use client';
+
 import React from 'react';
-import Image from 'next/image';
-import { ButtonSecondary } from '@/components/ui/ButtonSecondary';
+import { InfoCard } from '@/components/ui/InfoCard';
+import FAQSection from '@/components/sections/FAQSection';
 
 /**
- * HomeEligibility section implementing "Who can take part".
- * Based on Figma node 307:12235.
+ * Helper component for the eligibility checklist items.
+ */
+const CheckItem = ({ checked, text }: { checked: boolean; text: string }) => (
+  <div className="flex items-start gap-2 mt-1">
+    <span className={`ContentMRegular ${checked ? 'text-[#1a1a1a]' : 'text-grey600'} italic font-serif`}>
+      {checked ? '✓' : '✗'}
+    </span>
+    <span className={`ContentMRegular ${checked ? 'text-[#1a1a1a]' : 'text-grey600'}`}>
+      {text}
+    </span>
+  </div>
+);
+
+/**
+ * Helper component for the statistics list.
+ */
+const StatLine = ({ label, value }: { label: string; value: string }) => (
+  <div className="flex gap-1">
+    <span className="ContentMBold text-[#1a1a1a]">{label}:</span>
+    <span className="ContentMRegular text-[#1a1a1a]">{value}</span>
+  </div>
+);
+
+/**
+ * HomeEligibility section implementing the "Japan Trip Eligibility" block.
+ * Rebuilt to match Figma node 675:3828 and the latest content requirements.
  */
 export default function HomeEligibility() {
-  const eligibilityCriteria = [
+  const eligibilityCards = [
     {
-      icon: '/images/eligibility-icon-1.svg',
-      text: 'Registered Australian business with a valid ABN',
+      iconContent: (
+        <div className="flex flex-col items-center justify-center text-[#001a77] text-center">
+          <span className="font-bold text-[64px] tracking-[-1.92px] leading-none">20%</span>
+          <span className="font-normal text-[24px] tracking-[-0.72px] leading-none mt-2">MORE</span>
+        </div>
+      ),
+      description: (
+        <p>
+          Return at least 20% more refrigerant<br />
+          than previous year’s reclaim volume
+        </p>
+      ),
     },
     {
-      icon: '/images/eligibility-icon-2.svg',
-      text: 'Hold a current RTA AU licence.',
+      iconContent: (
+        <div className="flex flex-col items-center justify-center text-[#001a77] text-center">
+          <span className="font-normal text-[24px] tracking-[-0.72px] leading-none">MINIMUM</span>
+          <span className="font-bold text-[36px] tracking-[-1.08px] leading-none mt-1">VOLUME</span>
+          <span className="font-bold text-[64px] tracking-[-1.92px] leading-none mt-1">3T</span>
+        </div>
+      ),
+      description: "Meet the minimum volume threshold",
     },
     {
-      icon: '/images/eligibility-icon-3.svg',
-      text: 'Return refrigerant through Airefrig Australia or Actrol.',
-    },
-    {
-      icon: '/images/eligibility-icon-4.svg',
-      text: 'Return at least 20% more refrigerant than their previous 12-month volume.',
-    },
-    {
-      icon: '/images/eligibility-icon-5.svg',
-      text: 'Meet the minimum volume threshold (see T&Cs).',
+      iconContent: (
+        <div className="flex flex-col items-center justify-center text-[#001a77] text-center">
+          <span className="font-normal text-[24px] tracking-[-0.72px] leading-none">REGISTERED</span>
+          <span className="font-bold text-[36px] tracking-[-1.08px] leading-none mt-2">BUSINESS</span>
+        </div>
+      ),
+      description: (
+        <p>
+          Registered Australian Business with<br />
+          RTA AU Licence
+        </p>
+      ),
     },
   ];
 
-  return (
-    <section className="bg-grey50">
-      <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-[80px] flex flex-col lg:flex-row gap-10 lg:gap-[20px]">
-
-        {/* Left Column: Sticky Title and Mascot */}
-        <div className="lg:w-1/2 flex flex-col gap-8 lg:sticky lg:top-[100px] lg:py-[60px] self-start h-fit">
-          <h2 className="HeadingLBold text-blue950">
-            Who can take part
-          </h2>
-          <div className="relative w-full max-w-[444px] aspect-[444/734] overflow-hidden">
-            <Image
-              src="/images/eligibility-mascot.png"
-              alt="Eligibility Mascot"
-              fill
-              className="object-contain object-left-top"
-              priority
-            />
+  const faqs = [
+    {
+      question: "Meets All Criteria",
+      answer: (
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-col">
+            <StatLine label="Previous Return" value="2t" />
+            <StatLine label="Target (+20%)" value="2.4t" />
+            <StatLine label="Actual Return" value="3.5t" />
+          </div>
+          <div className="flex flex-col">
+            <CheckItem checked={true} text="Meets 20% increase" />
+            <CheckItem checked={true} text="Exceeds 3t minimum" />
+            <CheckItem checked={true} text="Eligible to win economy trip" />
           </div>
         </div>
+      )
+    },
+    {
+      question: "Eligible for Business Class",
+      answer: (
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-col">
+            <StatLine label="Previous Return" value="6t" />
+            <StatLine label="Target (+20%)" value="7.2t" />
+            <StatLine label="Actual Return" value="11t" />
+          </div>
+          <div className="flex flex-col">
+            <CheckItem checked={true} text="Meets 20% increase" />
+            <CheckItem checked={true} text="Exceeds 10t minimum" />
+            <CheckItem checked={true} text="Eligible to win business class trip" />
+          </div>
+        </div>
+      )
+    },
+    {
+      question: "Misses Minimum Volume",
+      answer: (
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-col">
+            <StatLine label="Previous Return" value="1.5t" />
+            <StatLine label="Target (+20%)" value="1.8t" />
+            <StatLine label="Actual Return" value="2.8t" />
+          </div>
+          <div className="flex flex-col">
+            <CheckItem checked={true} text="Meets 20% increase" />
+            <CheckItem checked={false} text="Does not reach 3t minimum" />
+            <CheckItem checked={false} text="Not eligible" />
+          </div>
+        </div>
+      )
+    },
+    {
+      question: "Meets Volume, Not Growth",
+      answer: (
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-col">
+            <StatLine label="Previous Return" value="4t" />
+            <StatLine label="Target (+20%)" value="4.8t" />
+            <StatLine label="Actual Return" value="4.5t" />
+          </div>
+          <div className="flex flex-col">
+            <CheckItem checked={false} text="Does not meet 20% increase" />
+            <CheckItem checked={true} text="Exceeds 3t minimum" />
+            <CheckItem checked={false} text="Not eligible" />
+          </div>
+        </div>
+      )
+    }
+  ];
 
-        {/* Right Column: Content and Checklist */}
-        <div className="lg:w-1/2 flex flex-col gap-10 py-4 lg:py-[60px] relative">
+  return (
+    <section id="eligibility" className="bg-grey100 py-[60px]">
+      <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-[80px]">
 
-          {/* Introductory Text */}
-          <h3 className="HeadingXSBold text-grey950 max-w-[425px]">
-            Reclaim Rewards is open to Australian HVAC-R businesses that:
-          </h3>
-
-          {/* Checklist with Connector Line */}
-          <div className="relative flex flex-col gap-8 lg:gap-[40px]">
-
-            {/* Vertical Connector Line */}
-            <div className="absolute left-[29.5px] top-[40px] bottom-[40px] w-[1px] hidden md:block">
-              <Image
-                src="/images/eligibility-line.svg"
-                alt=""
-                fill
-                className="object-cover"
+        <div className="flex flex-col gap-15">
+          {/* Heading Container */}
+          <div className="w-full">
+            <h2 className="HeadingLBold text-blue950 text-center">
+              Japan Trip Eligibility
+            </h2>
+          </div>
+          {/* Eligibility Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {eligibilityCards.map((card, index) => (
+              <InfoCard
+                key={index}
+                iconContent={card.iconContent}
+                description={card.description}
               />
-            </div>
-
-            {/* Criteria Items */}
-            {eligibilityCriteria.map((item, index) => (
-              <div key={index} className="flex gap-8 items-center z-10">
-                <div className="bg-white rounded-full flex items-center justify-center size-[60px] shrink-0 shadow-sm">
-                  <Image
-                    src={item.icon}
-                    alt=""
-                    width={24}
-                    height={24}
-                  />
-                </div>
-                <p className="ContentMRegular text-grey950 max-w-[425px]">
-                  {item.text}
-                </p>
-              </div>
             ))}
           </div>
-
-          {/* CTA Button */}
-          <div className="mt-4">
-            <ButtonSecondary
-              className="border border-white"
-            >
-              See 4 worked examples
-            </ButtonSecondary>
-          </div>
-
-          {/* Disclaimer */}
-          <p className="ContentSRegular text-grey950">
-            *Japan trip eligibility requires all three: 20% growth + minimum volume + registered business with RTA AU licence.
-          </p>
         </div>
 
+        {/* FAQ Section with Data passed to generic layout */}
+        <div className="mt-[20px]">
+          <FAQSection items={faqs} cardClassName="bg-[#F5F5F5]" />
+        </div>
       </div>
     </section>
   );

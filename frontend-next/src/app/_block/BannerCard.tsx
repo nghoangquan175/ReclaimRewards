@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+// import japanLogo from '@/assets/icons/banner-japan-logo.svg';
 
 /**
  * BannerCard component - "Win a trip to Japan".
@@ -14,15 +15,15 @@ export default function BannerCard() {
         WIN A TRIP TO
       </h3>
 
-      {/* Japan Logo (Single combined asset) */}
+      {/* Japan Logo (Single combined asset)
       <div className="relative h-[60px] w-full max-w-[162px] my-2">
         <Image
-          src="/images/banner-japan-logo.svg"
+          src={japanLogo}
           alt="Japan Trip"
           fill
           className="object-contain"
         />
-      </div>
+      </div> */}
 
       {/* Value Badge */}
       <div className="bg-blue200 rounded-full px-6 py-4 flex flex-col sm:flex-row gap-2 items-center justify-center">

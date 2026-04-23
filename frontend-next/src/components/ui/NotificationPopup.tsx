@@ -2,6 +2,11 @@
 
 import React from 'react';
 import Image from 'next/image';
+import notificationMascot from '@/assets/images/notification-mascot.png';
+import closeIcon from '@/assets/icons/close-white.svg';
+import gauge1 from '@/assets/icons/notification-gauge-1.svg';
+import gauge2 from '@/assets/icons/notification-gauge-2.svg';
+import instagramIcon from '@/assets/icons/instagram-white.svg';
 
 interface NotificationPopupProps {
   onClose?: () => void;
@@ -26,7 +31,7 @@ const NotificationPopup: React.FC<NotificationPopupProps> = ({ onClose, onFollow
         aria-label="Close"
       >
         <Image 
-          src="/images/close-white.svg" 
+          src={closeIcon} 
           alt="Close" 
           width={20} 
           height={20}
@@ -52,7 +57,7 @@ const NotificationPopup: React.FC<NotificationPopupProps> = ({ onClose, onFollow
         >
           <div className="relative w-[120%] h-[120%] -bottom-[5%]">
             <Image
-              src="/images/notification-mascot.png"
+              src={notificationMascot}
               alt="Reggie Mascot"
               fill
               className="object-contain"
@@ -68,7 +73,7 @@ const NotificationPopup: React.FC<NotificationPopupProps> = ({ onClose, onFollow
            data-node-id="319:14792"
         >
           <Image 
-            src="/images/notification-gauge-1.svg" 
+            src={gauge1} 
             alt="Gauge" 
             width={179} 
             height={179} 
@@ -81,7 +86,7 @@ const NotificationPopup: React.FC<NotificationPopupProps> = ({ onClose, onFollow
            data-node-id="319:14881"
         >
           <Image 
-            src="/images/notification-gauge-2.svg" 
+            src={gauge2} 
             alt="Gauge Detail" 
             width={144} 
             height={144}
@@ -119,7 +124,7 @@ const NotificationPopup: React.FC<NotificationPopupProps> = ({ onClose, onFollow
             </span>
             <div className="bg-white w-8 h-8 rounded-full flex items-center justify-center p-2 group-hover:scale-110 transition-transform">
               <Image 
-                src="/images/instagram-white.svg" 
+                src={instagramIcon} 
                 alt="Social Icon" 
                 width={16} 
                 height={16}

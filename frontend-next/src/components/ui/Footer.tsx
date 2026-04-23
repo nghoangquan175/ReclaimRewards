@@ -4,7 +4,12 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ButtonPrimaryOnDark } from './ButtonPrimaryOnDark';
+import { scrollToSection } from '@/lib/utils';
 import { IconArrowRight } from './icons/IconArrowRight';
+import logoWhite from '@/assets/icons/logo-white.svg';
+import airefrigLogo from '@/assets/icons/airefrig-logo.svg';
+import actrolLogo from '@/assets/icons/actrol-logo.svg';
+import agasLogo from '@/assets/icons/agas-logo.svg';
 
 /**
  * Footer component following the Reclaim Rewards design system.
@@ -32,7 +37,7 @@ const Footer = () => {
             {/* Logo: Mobile/Tablet order 1 */}
             <div className="w-[122px] md:w-[163px] lg:w-[228px] order-1">
               <Image
-                src="/images/logo-white.svg"
+                src={logoWhite}
                 alt="Reclaim Rewards Logo"
                 width={228}
                 height={56}
@@ -48,14 +53,22 @@ const Footer = () => {
 
               {/* Tablet-only content: Button */}
               <div className="hidden md:flex lg:hidden">
-                <ButtonPrimaryOnDark className="w-full justify-between" showIcon={true}>
+                <ButtonPrimaryOnDark 
+                  className="w-full justify-between" 
+                  showIcon={true}
+                  onClick={() => scrollToSection('registration')}
+                >
                   Register by 30 June 2026
                 </ButtonPrimaryOnDark>
               </div>
 
               {/* Mobile-only content: Button and Links */}
               <div className="flex flex-col gap-6 md:hidden">
-                <ButtonPrimaryOnDark className="w-full justify-between" showIcon={true}>
+                <ButtonPrimaryOnDark 
+                  className="w-full justify-between" 
+                  showIcon={true}
+                  onClick={() => scrollToSection('registration')}
+                >
                   Register by 30 June 2026
                 </ButtonPrimaryOnDark>
 
@@ -71,15 +84,15 @@ const Footer = () => {
           {/* Partners: Mobile/Tablet order 2 */}
           <div className="bg-white p-6 lg:px-10 lg:py-8 rounded-xl md:rounded-[32px] flex items-center justify-between md:justify-center gap-[18px] md:gap-[38px] lg:gap-10 shadow-lg w-full md:w-auto order-2 lg:order-none lg:ml-auto">
             <div className="flex items-center justify-center flex-1 md:flex-none">
-              <Image src="/images/airefrig-logo.svg" alt="Airefrig Australia" width={120} height={40} className="h-5 md:h-10 w-auto object-contain" />
+              <Image src={airefrigLogo} alt="Airefrig Australia" width={120} height={40} className="h-5 md:h-10 w-auto object-contain" />
             </div>
             <div className="w-[1px] md:w-[2px] h-5 md:h-10 bg-blue950" />
             <div className="flex items-center justify-center flex-1 md:flex-none">
-              <Image src="/images/actrol-logo.svg" alt="Actrol" width={140} height={32} className="h-5 md:h-8 w-auto object-contain" />
+              <Image src={actrolLogo} alt="Actrol" width={140} height={32} className="h-5 md:h-8 w-auto object-contain" />
             </div>
             <div className="w-[1px] md:w-[2px] h-5 md:h-10 bg-blue950" />
             <div className="flex items-center justify-center flex-1 md:flex-none">
-              <Image src="/images/agas-logo.svg" alt="A-Gas" width={120} height={40} className="h-5 md:h-10 w-auto object-contain" />
+              <Image src={agasLogo} alt="A-Gas" width={120} height={40} className="h-5 md:h-10 w-auto object-contain" />
             </div>
           </div>
         </div>
@@ -99,7 +112,7 @@ const Footer = () => {
 
           {/* Main CTA Button: Desktop only here */}
           <div className="">
-            <ButtonPrimaryOnDark>
+            <ButtonPrimaryOnDark onClick={() => scrollToSection('registration')}>
               Register by 30 June 2026
             </ButtonPrimaryOnDark>
           </div>
