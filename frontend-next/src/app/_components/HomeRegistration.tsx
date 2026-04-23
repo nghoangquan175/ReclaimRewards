@@ -200,27 +200,27 @@ export default function HomeRegistration() {
                                 <div className="flex flex-wrap items-center gap-4 md:gap-8">
                                     <div className="bg-grey50 rounded-[8px] pl-3 pr-6 py-3 flex items-center gap-4">
                                         <Checkbox
+                                            label="Actrol/Reece"
                                             checked={selectedWholesalers.includes('Actrol/Reece')}
                                             onChange={() => handleWholesalerToggle('Actrol/Reece')}
                                             disabled={selectedWholesalers.includes('Other')}
                                         />
-                                        <span className="ContentMRegular text-grey950">Actrol/Reece</span>
                                     </div>
                                     <div className="bg-grey50 rounded-[8px] pl-3 pr-6 py-3 flex items-center gap-4">
                                         <Checkbox
+                                            label="Airefrig"
                                             checked={selectedWholesalers.includes('Airefrig')}
                                             onChange={() => handleWholesalerToggle('Airefrig')}
                                             disabled={selectedWholesalers.includes('Other')}
                                         />
-                                        <span className="ContentMRegular text-grey950">Airefrig</span>
                                     </div>
                                     <div className="bg-grey50 rounded-[8px] pl-3 pr-6 py-3 flex items-center gap-4">
                                         <Checkbox
+                                            label="Other"
                                             checked={selectedWholesalers.includes('Other')}
                                             onChange={() => handleWholesalerToggle('Other')}
                                             disabled={selectedWholesalers.includes('Actrol/Reece') || selectedWholesalers.includes('Airefrig')}
                                         />
-                                        <span className="ContentMRegular text-grey950">Other</span>
                                     </div>
                                     <div className="flex-1 min-w-[200px] flex items-center gap-3">
                                         <span className="ContentMRegular text-grey950 whitespace-nowrap">If Other</span>
@@ -277,12 +277,14 @@ export default function HomeRegistration() {
                             </div>
 
                             <div className="flex flex-col gap-2">
-                                <div className="flex items-start gap-3.5">
-                                    <Checkbox {...register('termsConsent')} />
-                                    <p className="ContentMRegular text-grey950">
-                                        I agree to the <a href="#" className="text-magenta600 underline">Terms & Conditions</a> and acknowledge that my personal information will be collected and used in accordance with the <a href="#" className="text-magenta600 underline">A-Gas Privacy Policy.</a>
-                                    </p>
-                                </div>
+                                <Checkbox 
+                                    {...register('termsConsent')} 
+                                    label={
+                                        <p className="ContentMRegular text-grey950">
+                                            I agree to the <a href="#" className="text-magenta600 underline">Terms & Conditions</a> and acknowledge that my personal information will be collected and used in accordance with the <a href="#" className="text-magenta600 underline">A-Gas Privacy Policy.</a>
+                                        </p>
+                                    }
+                                />
                                 {errors.termsConsent && <p className="ContentSRegular text-magenta950 ml-9">{errors.termsConsent.message}</p>}
                             </div>
 
