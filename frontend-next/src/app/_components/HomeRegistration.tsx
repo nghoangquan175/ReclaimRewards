@@ -8,7 +8,9 @@ import * as z from 'zod';
 import { InputText } from '@/components/ui/InputText';
 import { Checkbox } from '@/components/ui/Checkbox';
 import { ButtonPrimaryOnLight } from '@/components/ui/ButtonPrimaryOnLight';
+import NotificationPopup from '@/components/ui/NotificationPopup';
 import japanIcon from '@/assets/icons/japan.svg';
+import { useState } from 'react';
 
 // Define the validation schema
 const registrationSchema = z.object({
@@ -64,9 +66,11 @@ export default function HomeRegistration() {
         },
     });
 
+    const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+
     const onSubmit = (data: RegistrationFormValues) => {
         console.log('Form Submitted:', data);
-        alert('Registration successful! (Demo)');
+        setShowSuccessPopup(true);
     };
 
     const selectedWholesalers = watch('wholesalers');
@@ -195,7 +199,7 @@ export default function HomeRegistration() {
                                 </p>
                                 <div className="flex flex-wrap items-center gap-4 md:gap-8">
                                     <div className="bg-grey50 rounded-[8px] pl-3 pr-6 py-3 flex items-center gap-4">
-                                        <Checkbox 
+                                        <Checkbox
                                             checked={selectedWholesalers.includes('Actrol/Reece')}
                                             onChange={() => handleWholesalerToggle('Actrol/Reece')}
                                             disabled={selectedWholesalers.includes('Other')}
@@ -203,7 +207,7 @@ export default function HomeRegistration() {
                                         <span className="ContentMRegular text-grey950">Actrol/Reece</span>
                                     </div>
                                     <div className="bg-grey50 rounded-[8px] pl-3 pr-6 py-3 flex items-center gap-4">
-                                        <Checkbox 
+                                        <Checkbox
                                             checked={selectedWholesalers.includes('Airefrig')}
                                             onChange={() => handleWholesalerToggle('Airefrig')}
                                             disabled={selectedWholesalers.includes('Other')}
@@ -211,7 +215,7 @@ export default function HomeRegistration() {
                                         <span className="ContentMRegular text-grey950">Airefrig</span>
                                     </div>
                                     <div className="bg-grey50 rounded-[8px] pl-3 pr-6 py-3 flex items-center gap-4">
-                                        <Checkbox 
+                                        <Checkbox
                                             checked={selectedWholesalers.includes('Other')}
                                             onChange={() => handleWholesalerToggle('Other')}
                                             disabled={selectedWholesalers.includes('Actrol/Reece') || selectedWholesalers.includes('Airefrig')}
@@ -249,24 +253,24 @@ export default function HomeRegistration() {
                         {/* Confirmation Statements */}
                         <div className="flex flex-col gap-6 pt-2">
                             <div className="flex flex-col gap-2">
-                                <Checkbox 
-                                    label="I confirm I am 18 years or older" 
+                                <Checkbox
+                                    label="I confirm I am 18 years or older"
                                     {...register('is18OrOlder')}
                                 />
                                 {errors.is18OrOlder && <p className="ContentSRegular text-magenta950 ml-9">{errors.is18OrOlder.message}</p>}
                             </div>
 
                             <div className="flex flex-col gap-2">
-                                <Checkbox 
-                                    label="I confirm I am the owner, director, or authorised representative of the business" 
+                                <Checkbox
+                                    label="I confirm I am the owner, director, or authorised representative of the business"
                                     {...register('isAuthorised')}
                                 />
                                 {errors.isAuthorised && <p className="ContentSRegular text-magenta950 ml-9">{errors.isAuthorised.message}</p>}
                             </div>
 
                             <div className="flex flex-col gap-2">
-                                <Checkbox 
-                                    label="I understand that my leaderboard alias will be displayed publicly." 
+                                <Checkbox
+                                    label="I understand that my leaderboard alias will be displayed publicly."
                                     {...register('publicAliasConsent')}
                                 />
                                 {errors.publicAliasConsent && <p className="ContentSRegular text-magenta950 ml-9">{errors.publicAliasConsent.message}</p>}
@@ -283,8 +287,8 @@ export default function HomeRegistration() {
                             </div>
 
                             <div className="flex flex-col gap-2">
-                                <Checkbox 
-                                    label="I consent to A-Gas requesting program-related information from participating wholesalers, including total reclaim volumes, for the purpose of administering the program and verifying refrigerant returns." 
+                                <Checkbox
+                                    label="I consent to A-Gas requesting program-related information from participating wholesalers, including total reclaim volumes, for the purpose of administering the program and verifying refrigerant returns."
                                     {...register('dataConsent')}
                                 />
                                 {errors.dataConsent && <p className="ContentSRegular text-magenta950 ml-9">{errors.dataConsent.message}</p>}
@@ -305,6 +309,19 @@ export default function HomeRegistration() {
                     </form>
                 </div>
             </div>
+
+            {/* Success Notification Popup */}
+            {showSuccessPopup && (
+                <div className="fixed inset-0 z-[9999] flex items-end justify-center bg-blue300/80">
+                    <div className="w-full max-w-[900px] flex justify-center px-4 md:px-0">
+                        <NotificationPopup
+                            onClose={() => setShowSuccessPopup(false)}
+                            onFollowFacebook={() => window.open('https://www.facebook.com/', '_blank')}
+                            onFollowLinkedin={() => window.open('https://www.linkedin.com/', '_blank')}
+                        />
+                    </div>
+                </div>
+            )}
         </section>
     );
 }
