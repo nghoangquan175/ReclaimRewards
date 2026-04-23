@@ -1,7 +1,9 @@
+
 @use "./includes/family-fonts.scss" as *;
 @use "./includes/typos-fonts.scss" as *;
-@config "../../tailwind.config.ts";
 @import "tailwindcss";
+
+@config "../../tailwind.config.ts";
 
 html {
   scroll-behavior: smooth;
@@ -10,11 +12,6 @@ html {
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
 }
 
 @media (prefers-color-scheme: dark) {
