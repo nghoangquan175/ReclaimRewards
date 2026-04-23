@@ -31,7 +31,7 @@ export const FAQCard: React.FC<FAQCardProps> = ({ question, answer, className = 
         </div>
         <button
           className={`
-            bg-blue950 flex items-center justify-center rounded-full shrink-0 size-9 
+            bg-blue950 flex items-center justify-center rounded-full shrink-0 size-9 cursor-pointer
             transition-transform duration-300 ease-[cubic-bezier(0,0,0.58,1)]
             ${isOpen ? 'rotate-45' : 'rotate-0'}
           `}
