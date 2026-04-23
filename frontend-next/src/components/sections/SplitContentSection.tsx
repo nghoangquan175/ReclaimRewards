@@ -18,6 +18,7 @@ interface SplitContentSectionProps {
   extraContent?: React.ReactNode;
   imageContainerClassName?: string;
   sectionClassName?: string;
+  imageSizes?: string;
 }
 
 /**
@@ -37,6 +38,7 @@ export const SplitContentSection: React.FC<SplitContentSectionProps> = ({
   extraContent,
   imageContainerClassName = '',
   sectionClassName = '',
+  imageSizes = '(max-width: 1024px) 100vw, 50vw',
 }) => {
   return (
     <section id={id} className={`bg-grey100 ${sectionClassName}`}>
@@ -102,6 +104,7 @@ export const SplitContentSection: React.FC<SplitContentSectionProps> = ({
               src={imageSrc}
               alt={imageAlt}
               fill
+              sizes={imageSizes}
               className="object-cover"
             />
           </div>

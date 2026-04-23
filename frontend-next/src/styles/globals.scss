@@ -1,7 +1,7 @@
+@use "./includes/family-fonts.scss" as *;
+@use "./includes/typos-fonts.scss" as *;
 @config "../../tailwind.config.ts";
 @import "tailwindcss";
-@import "./includes/family-fonts.scss";
-@import "./includes/typos-fonts.scss";
 
 html {
   scroll-behavior: smooth;

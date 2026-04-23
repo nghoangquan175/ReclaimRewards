@@ -26,7 +26,8 @@ export default function HomeBanner() {
               width={407}
               height={100}
               priority
-              className="w-full h-full object-contain object-left"
+              className="w-full h-auto object-contain object-left"
+              style={{ height: 'auto' }}
             />
           </div>
 
@@ -43,14 +44,15 @@ export default function HomeBanner() {
 
         {/* Reggie & Cylinder - Positioned to the center-left of the right block */}
         <div className="absolute bottom-0 left-[522px] w-[379px] h-[560px] z-60">
-          <Image
-            src={reggieWithCylinder}
-            alt="Reggie and A-Gas Cylinder"
-            width={379}
-            height={560}
-            priority
-            className="object-contain object-bottom absolute top-[222px]"
-          />
+            <Image
+              src={reggieWithCylinder}
+              alt="Reggie and A-Gas Cylinder"
+              width={379}
+              height={560}
+              priority
+              className="object-contain object-bottom absolute top-[222px]"
+              style={{ height: 'auto' }}
+            />
         </div>
 
         {/* Japan Portal Circular Design (Figma node 713:10150) */}
@@ -59,6 +61,7 @@ export default function HomeBanner() {
             src={japanPortal}
             alt="Japan Trip Reward"
             fill
+            sizes="(max-width: 1024px) 100vw, 500px"
             className="object-cover"
           />
         </div>
