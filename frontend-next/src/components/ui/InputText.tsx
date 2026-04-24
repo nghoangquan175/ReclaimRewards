@@ -85,7 +85,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
         rounded: 'rounded-[8px]',
         text: 'text-magenta950',
         label: 'text-magenta950',
-        placeholder: 'placeholder:text-magenta400',
+        placeholder: 'placeholder:text-magenta950',
         icon: 'text-magenta950',
       },
       Disabled: {

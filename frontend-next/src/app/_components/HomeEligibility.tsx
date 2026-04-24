@@ -37,8 +37,8 @@ export default function HomeEligibility() {
     {
       iconContent: (
         <div className="flex flex-col gap-2 items-center justify-center text-[#001a77] text-center">
-          <span className="font-bold text-[48px] tracking-[-1.44px] leading-none">20%</span>
-          <span className="ContentXLRegular tracking-[-0.4px] leading-none">MORE</span>
+          <span className="HeadingXLBold">20%</span>
+          <span className="ContentXLRegular">MORE</span>
         </div>
       ),
       description: (
@@ -51,9 +51,9 @@ export default function HomeEligibility() {
     {
       iconContent: (
         <div className="flex flex-col gap-2 items-center justify-center text-[#001a77] text-center">
-          <span className="ContentXLRegular tracking-[-0.4px] leading-none">MINIMUM</span>
-          <span className="HeadingSBold tracking-[-0.84px] leading-none">VOLUME</span>
-          <span className="font-bold text-[48px] tracking-[-1.44px] leading-none">3T</span>
+          <span className="HeadingXSRegular">MINIMUM</span>
+          <span className="HeadingMBold">VOLUME</span>
+          <span className="HeadingXLBold">3T</span>
         </div>
       ),
       description: "Meet the minimum volume threshold",
@@ -61,8 +61,8 @@ export default function HomeEligibility() {
     {
       iconContent: (
         <div className="flex flex-col gap-2 items-center justify-center text-[#001a77] text-center">
-          <span className="ContentXLRegular tracking-[-0.4px] leading-none uppercase">Registered</span>
-          <span className="HeadingSBold tracking-[-0.84px] leading-none uppercase">Business</span>
+          <span className="HeadingXSRegular">Registered</span>
+          <span className="HeadingMBold">Business</span>
         </div>
       ),
       description: (

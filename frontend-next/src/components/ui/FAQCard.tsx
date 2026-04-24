@@ -19,8 +19,9 @@ export const FAQCard: React.FC<FAQCardProps> = ({ question, answer, className = 
 
   return (
     <div
+      onClick={() => setIsOpen(!isOpen)}
       className={`
-        flex flex-col px-6 pt-6 rounded-[24px] w-full 
+        flex flex-col px-6 pt-6 rounded-[24px] w-full cursor-pointer select-none
         transition-all duration-300 ease-[cubic-bezier(0,0,0.58,1)]
         ${className || 'bg-grey50'}
       `}
@@ -29,14 +30,12 @@ export const FAQCard: React.FC<FAQCardProps> = ({ question, answer, className = 
         <div className="flex-1 ContentLBold text-[#1a1a1a] select-none min-h-[36px] flex items-center">
           {question}
         </div>
-        <button
+        <div
           className={`
-            bg-blue950 flex items-center justify-center rounded-full shrink-0 size-9 cursor-pointer
+            bg-blue950 flex items-center justify-center rounded-full shrink-0 size-9
             transition-transform duration-300 ease-[cubic-bezier(0,0,0.58,1)]
             ${isOpen ? 'rotate-[-45deg]' : 'rotate-0'}
           `}
-          aria-expanded={isOpen}
-          onClick={() => setIsOpen(!isOpen)}
         >
           <Image
             src={plusIcon}
@@ -44,7 +43,7 @@ export const FAQCard: React.FC<FAQCardProps> = ({ question, answer, className = 
             width={20}
             height={20}
           />
-        </button>
+        </div>
       </div>
 
       {/* Answer content with smooth decoupled expansion */}

@@ -17,7 +17,7 @@ export default function HomeSustainability() {
   ];
 
   const extraContent = (
-    <p className="font-bold text-[#001a77] text-[20px] tracking-[-0.4px] leading-tight mt-2">
+    <p className="ContentXLBold text-blue950">
       Now, your impact could take you all <br className="hidden lg:block" /> the way to Japan!
     </p>
   );

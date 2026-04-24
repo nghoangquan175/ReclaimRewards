@@ -74,27 +74,27 @@ const Header = () => {
             <Link
               href="/#how-it-works"
               onClick={(e) => scrollToSection(e, 'how-it-works')}
-              className="px-3 py-2 ContentMBold text-white whitespace-nowrap hover:opacity-80 transition-opacity"
+              className="px-3 py-2 ContentMBold text-white whitespace-nowrap"
             >
               How It Works
             </Link>
             <Link
               href="/#rewards"
               onClick={(e) => scrollToSection(e, 'rewards')}
-              className="px-3 py-2 ContentMBold text-white whitespace-nowrap hover:opacity-80 transition-opacity"
+              className="px-3 py-2 ContentMBold text-white whitespace-nowrap"
             >
               Rewards
             </Link>
             <Link
               href="/#faqs"
               onClick={(e) => scrollToSection(e, 'faqs')}
-              className="px-3 py-2 ContentMBold text-white whitespace-nowrap hover:opacity-80 transition-opacity"
+              className="px-3 py-2 ContentMBold text-white whitespace-nowrap"
             >
               FAQs
             </Link>
             <Link
               href="/terms-conditions"
-              className="px-3 py-2 ContentMBold text-white whitespace-nowrap hover:opacity-80 transition-opacity"
+              className="px-3 py-2 ContentMBold text-white whitespace-nowrap"
             >
               T&Cs
             </Link>

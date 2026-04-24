@@ -49,7 +49,7 @@ export default function HomeServices() {
           How it Works
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[10px] w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
           {steps.map((item) => (
             <InfoCard
               key={item.step}

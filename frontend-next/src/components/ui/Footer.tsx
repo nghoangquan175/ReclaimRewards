@@ -112,9 +112,9 @@ const Footer = () => {
 
         {/* Tablet/Mobile Links */}
         <div className="hidden md:flex lg:hidden flex-col w-full">
-          <Link href="/terms-conditions" className="py-[12px] border-y border-white ContentMBold">Terms & Conditions</Link>
-          <Link href="/privacy" className="py-[12px] border-b border-white ContentMBold">Privacy Policy</Link>
-          <a href="mailto:info@agas.com" className="py-[12px] border-b border-white ContentMBold">Contact</a>
+          <Link href="/terms-conditions" className="py-[12px] border-y border-white ContentSRegular">Terms & Conditions</Link>
+          <Link href="/privacy" className="py-[12px] border-b border-white ContentSRegular">Privacy Policy</Link>
+          <a href="mailto:info@agas.com" className="py-[12px] border-b border-white ContentSRegular">Contact</a>
         </div>
 
         {/* Desktop Separator Line */}
@@ -132,8 +132,8 @@ const Footer = () => {
             </ButtonPrimaryOnDark>
           </div>
 
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 w-full md:w-auto">
-            <div className="flex flex-col md:flex-row w-full md:w-auto ContentSBold md:ContentSRegular lg:gap-5 md:opacity-80">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 lg:gap-[60px] w-full md:w-auto">
+            <div className="flex flex-col md:flex-row w-full md:w-auto ContentSRegular lg:gap-5 md:opacity-80">
               <Link href="/terms-conditions" className="cursor-pointer">Terms & Conditions</Link>
               <Link href="/privacy" className="cursor-pointer">Privacy Policy</Link>
             </div>

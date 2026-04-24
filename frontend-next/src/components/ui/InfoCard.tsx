@@ -1,6 +1,6 @@
 import React from 'react';
 import Image, { StaticImageData } from 'next/image';
-import hexagon from '@/assets/icons/star_1.svg';
+import hexagon from '@/assets/icons/star_2.svg';
 
 interface InfoCardProps {
   step?: number;
@@ -28,15 +28,15 @@ export const InfoCard: React.FC<InfoCardProps> = ({
   return (
     <div className={`bg-white flex flex-col gap-6 p-4 rounded-[24px] w-full h-full overflow-hidden ${className}`}>
       {/* Top Section: Icon Area */}
-      <div className="bg-blue300 h-[200px] relative rounded-[8px] overflow-hidden flex items-center justify-center">
+      <div className="bg-blue300 h-[260px] relative rounded-[8px] overflow-hidden flex items-center justify-center">
         {/* Hexagon Background */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <Image
             src={hexagon}
             alt=""
-            width={163}
-            height={163}
-            className="w-[163px] h-auto"
+            width={200}
+            height={200}
+            className="w-[200px] h-[200px]"
           />
         </div>
 
@@ -59,7 +59,7 @@ export const InfoCard: React.FC<InfoCardProps> = ({
         {step !== undefined && (
           <div className="absolute top-[15px] left-1/2 -translate-x-1/2 z-20">
             <div className="bg-blue950 rounded-full w-[36px] h-[36px] flex items-center justify-center">
-              <span className="text-white font-bold text-[20px] leading-none">
+              <span className="ContentXLBold">
                 {step}
               </span>
             </div>

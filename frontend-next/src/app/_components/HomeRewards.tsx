@@ -32,7 +32,7 @@ export default function HomeRewards() {
           <div className="flex flex-col w-full lg:w-[414px] shrink-0">
             <div className="px-5 mb-[-10px] z-[2]">
               <div className="bg-[#ec008c] h-[40px] flex items-center justify-center rounded-[8px] px-[10px]">
-                <span className="text-white font-bold text-[20px] tracking-[-0.4px]">Reward Points</span>
+                <span className="ContentXLBold">Reward Points</span>
               </div>
             </div>
             <div className="bg-white lg:bg-[#f5f6f6] flex flex-col md:flex-row lg:flex-col gap-6 items-center justify-center p-6 md:px-10 md:py-10 lg:px-8 lg:py-10 rounded-[24px] z-[1] border lg:border-none border-grey100 flex-1">

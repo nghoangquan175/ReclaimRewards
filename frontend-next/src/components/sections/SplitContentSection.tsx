@@ -46,7 +46,7 @@ export const SplitContentSection: React.FC<SplitContentSectionProps> = ({
     <section id={id} className={`bg-grey100 ${sectionClassName}`}>
       <div className="container mx-auto max-w-[1440px] px-6 md:px-10 lg:px-[80px]">
         <div className={`
-          bg-white flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} 
+          bg-white h-[566px] flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} 
           items-stretch justify-between gap-10 p-10 md:px-10 md:py-[30px] rounded-[24px] 
           min-h-[566px] overflow-hidden
         `}>
@@ -99,13 +99,13 @@ export const SplitContentSection: React.FC<SplitContentSectionProps> = ({
 
           {/* Image Container */}
           <div className={`
-            relative flex-1 md:min-h-[400px] rounded-[24px] overflow-hidden
+            flex justify-left relative w-[553px] h-[506px] w-full flex-1 md:min-h-[400px] rounded-[24px] overflow-hidden
             ${imageContainerClassName}
           `}>
             <Image
               src={imageSrc}
               alt={imageAlt}
-              fill
+
               sizes={imageSizes}
               className="object-cover z-10"
             />

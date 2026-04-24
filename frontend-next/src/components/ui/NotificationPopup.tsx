@@ -74,11 +74,11 @@ const NotificationPopup: React.FC<NotificationPopupProps> = ({ onClose, onFollow
 
       {/* Content Section */}
       <div className="flex flex-col gap-6 items-center text-center w-full relative z-40">
-        <h2 className="text-[#001A77] text-[28px] md:text-[36px] font-bold leading-none tracking-[-0.03em] font-sans">
+        <h2 className="HeadingMBold text-[#001A77]">
           You’re Registered!
         </h2>
 
-        <p className="text-[#252527] text-base md:text-[20px] font-normal leading-[1.3] tracking-[-0.02em] max-w-[680px] px-4 font-sans">
+        <p className="ContentMRegular text-[#252527] max-w-[680px] px-4">
           Keep an eye on your inbox for next steps. Once we’ve verified your details, drop off recovered refrigerant at Actrol or Airefrig Australia to start earning rewards.
         </p>
 
@@ -89,7 +89,7 @@ const NotificationPopup: React.FC<NotificationPopupProps> = ({ onClose, onFollow
             onClick={onFollowFacebook}
             className="bg-[#EC008C] hover:bg-[#EC008C]/90 text-white rounded-[80px] h-[40px] p-1 pl-4 flex items-center gap-3"
           >
-            <span className="font-bold text-sm md:text-[16px] tracking-[-0.02em] font-sans whitespace-nowrap">
+            <span className="ContentMBold whitespace-nowrap">
               Follow us on Facebook
             </span>
             <div className="bg-white w-8 h-8 rounded-full flex items-center justify-center">
@@ -107,7 +107,7 @@ const NotificationPopup: React.FC<NotificationPopupProps> = ({ onClose, onFollow
             onClick={onFollowLinkedin}
             className="bg-[#EC008C] hover:bg-[#EC008C]/90 text-white rounded-[80px] h-[40px] p-1 pl-4 flex items-center gap-3"
           >
-            <span className="font-bold text-sm md:text-[16px] tracking-[-0.02em] font-sans whitespace-nowrap">
+            <span className="ContentMBold whitespace-nowrap">
               Follow us on Linkedin
             </span>
             <div className="bg-white w-8 h-8 rounded-full flex items-center justify-center">
