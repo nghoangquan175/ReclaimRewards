@@ -4,44 +4,13 @@ import React from 'react';
 import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
 import { InputText } from '@/components/ui/InputText';
 import { Checkbox } from '@/components/ui/Checkbox';
 import { ButtonPrimaryOnLight } from '@/components/ui/ButtonPrimaryOnLight';
 import NotificationPopup from '@/components/ui/NotificationPopup';
 import japanIcon from '@/assets/icons/japan.svg';
 import { useState } from 'react';
-
-// Define the validation schema
-const registrationSchema = z.object({
-    firstName: z.string().min(1, 'First name is required'),
-    lastName: z.string().min(1, 'Last name is required'),
-    email: z.string().email('Invalid email address').min(1, 'Email is required'),
-    phone: z.string().min(1, 'Phone number is required'),
-    leaderboardAlias: z.string().min(1, 'Leaderboard alias is required'),
-    companyName: z.string().min(1, 'Company name is required'),
-    abn: z.string().length(11, 'ABN must be exactly 11 digits').regex(/^\d+$/, 'ABN must only contain digits'),
-    wholesalers: z.array(z.string()).min(1, 'Please select at least one wholesaler'),
-    otherWholesaler: z.string().optional(),
-    rtaNumber: z.string().min(1, 'RTA number is required').regex(/^AU/i, 'RTA number must start with "AU"'),
-    is18OrOlder: z.boolean().refine((val) => val === true, {
-        message: 'You must be at least 18 years old',
-    }),
-    isAuthorised: z.boolean().refine((val) => val === true, {
-        message: 'You must be an authorised representative',
-    }),
-    publicAliasConsent: z.boolean().refine((val) => val === true, {
-        message: 'You must consent to the public alias display',
-    }),
-    termsConsent: z.boolean().refine((val) => val === true, {
-        message: 'You must agree to the Terms & Conditions',
-    }),
-    dataConsent: z.boolean().refine((val) => val === true, {
-        message: 'You must consent to data sharing for verification',
-    }),
-});
-
-type RegistrationFormValues = z.infer<typeof registrationSchema>;
+import { registrationSchema, type RegistrationFormValues } from '@/lib/registrationSchema';
 
 /**
  * HomeRegistration section implementing the "Register your business" form.
@@ -58,19 +27,38 @@ export default function HomeRegistration() {
         resolver: zodResolver(registrationSchema),
         defaultValues: {
             wholesalers: [],
-            is18OrOlder: false as any,
-            isAuthorised: false as any,
-            publicAliasConsent: false as any,
-            termsConsent: false as any,
-            dataConsent: false as any,
+            is18OrOlder: false,
+            isAuthorised: false,
+            publicAliasConsent: false,
+            termsConsent: false,
+            dataConsent: false,
         },
     });
 
     const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+    const [submitError, setSubmitError] = useState<string | null>(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const onSubmit = (data: RegistrationFormValues) => {
-        console.log('Form Submitted:', data);
-        setShowSuccessPopup(true);
+    const onSubmit = async (data: RegistrationFormValues) => {
+        setSubmitError(null);
+        setIsSubmitting(true);
+        try {
+            const res = await fetch('/api/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+            const body = await res.json().catch(() => ({}));
+            if (res.ok) {
+                setShowSuccessPopup(true);
+            } else {
+                setSubmitError(body.error ?? 'Registration failed. Please try again.');
+            }
+        } catch {
+            setSubmitError('Network error. Please check your connection and try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const selectedWholesalers = watch('wholesalers');
@@ -293,13 +281,21 @@ export default function HomeRegistration() {
                         </div>
 
                         {/* Submit Button */}
-                        <div className="flex justify-center pt-4">
+                        <div className="flex flex-col items-center gap-3 pt-4">
+                            {submitError && (
+                                <p className="ContentSRegular text-magenta950 text-center" role="alert">
+                                    {submitError}
+                                </p>
+                            )}
                             <ButtonPrimaryOnLight
                                 type="submit"
                                 size="large"
-                                className="w-full md:w-fit "
+                                className="w-full md:w-fit"
+                                disabled={isSubmitting}
                             >
-                                <p className="text-[22.4px]">Join The Challenge</p>
+                                <p className="text-[22.4px]">
+                                    {isSubmitting ? 'Submitting…' : 'Join The Challenge'}
+                                </p>
                             </ButtonPrimaryOnLight>
                         </div>
 
