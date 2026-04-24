@@ -1,7 +1,7 @@
 'use client';
 
 import { SplitContentSection } from '@/components/sections/SplitContentSection';
-import mascotImg from '@/assets/images/A_Gas_RR_Mascotv2-3 1.png';
+import mascotImg from '@/assets/images/reggie-blue1.png';
 import { scrollToSection } from '@/lib/utils';
 
 /**
@@ -21,6 +21,17 @@ export default function HomeSustainability() {
       Now, your impact could take you all <br className="hidden lg:block" /> the way to Japan!
     </p>
   );
+
+  // const imageExtraContent = (
+  //   <>
+  //     <div className="absolute top-[40%] -right-10 w-[150%] h-auto opacity-80 pointer-events-none">
+  //       <Image src={benefitVector1} alt="" className="w-full h-auto" />
+  //     </div>
+  //     <div className="absolute bottom-[-10%] -left-[10%] w-[120%] h-auto opacity-60 pointer-events-none">
+  //       <Image src={benefitVector2} alt="" className="w-full h-auto" />
+  //     </div>
+  //   </>
+  // );
 
   return (
     <SplitContentSection

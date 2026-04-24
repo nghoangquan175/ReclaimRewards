@@ -26,17 +26,16 @@ export default function HomeRewards() {
         </div>
 
         {/* Main Content Area */}
-        {/* Main Content Area */}
-        <div className="w-full flex flex-col lg:flex-row gap-[5px] items-center lg:items-stretch">
+        <div className="w-full h-[482px] flex flex-col lg:flex-row gap-[5px] items-center lg:items-stretch">
 
           {/* Section 1: Reward Points */}
-          <div className="flex flex-col w-full lg:w-[414px] shrink-0 isolate">
+          <div className="flex flex-col w-full lg:w-[414px] shrink-0">
             <div className="px-5 mb-[-10px] z-[2]">
               <div className="bg-[#ec008c] h-[40px] flex items-center justify-center rounded-[8px] px-[10px]">
                 <span className="text-white font-bold text-[20px] tracking-[-0.4px]">Reward Points</span>
               </div>
             </div>
-            <div className="bg-white lg:bg-[#f5f6f6] flex flex-col md:flex-row lg:flex-col gap-6 items-center justify-center p-6 md:px-10 md:py-10 lg:px-8 lg:py-16 rounded-[24px] z-[1] border lg:border-none border-grey100">
+            <div className="bg-white lg:bg-[#f5f6f6] flex flex-col md:flex-row lg:flex-col gap-6 items-center justify-center p-6 md:px-10 md:py-10 lg:px-8 lg:py-10 rounded-[24px] z-[1] border lg:border-none border-grey100 flex-1">
               <div className="flex flex-col gap-6 items-center justify-center w-full md:w-1/2 lg:w-full">
                 <div className="ContentXLBold text-[#001a77] text-center">
                   <p>Earn Points on</p>
@@ -56,7 +55,7 @@ export default function HomeRewards() {
               </div>
 
               <div className="w-full md:w-1/2 lg:w-full text-[#252527] text-[16px] tracking-[-0.32px]">
-                <ul className="list-disc flex flex-col gap-2">
+                <ul className="list-disc flex flex-col">
                   <li className="ms-6">Earn 1 point for every kg returned above your volume from last FY</li>
                   <li className="ms-6">Min. 50 points ($25) Max. 1,000 points ($500) redeemable via e-gift voucher</li>
                   <li className="ms-6">Capped at 150,000 points across all participating businesses</li>
@@ -66,7 +65,7 @@ export default function HomeRewards() {
           </div>
 
           {/* Lock Separator */}
-          <div className="flex items-center justify-center shrink-0 lg:w-[57px]">
+          <div className="flex items-center h-full justify-center shrink-0 lg:w-[57px]">
             {/* Horizontal Lock (Desktop) */}
             <div className="hidden lg:block">
               <Image
@@ -90,9 +89,9 @@ export default function HomeRewards() {
           </div>
 
           {/* Section 2: Travel Incentives */}
-          <div className="flex flex-col w-full gap-8 md:gap-3">
-            <div className="flex flex-col isolate">
-              <div className="px-5 mb-[-10px] z-[2]">
+          <div className="h-full flex flex-col h-full w-full gap-8 md:gap-3">
+            <div className="flex flex-col flex-1">
+              <div className="px-5 mb-[-10px] z-[2] flex-1">
                 <div className="bg-[#ec008c] h-auto min-h-[40px] py-2 flex items-center justify-center rounded-[8px] px-[10px]">
                   <span className="ContentXLBold text-center">
                     Return Higher Volumes to Unlock Travel Incentives
@@ -101,7 +100,7 @@ export default function HomeRewards() {
               </div>
               <div className="flex flex-col md:flex-row gap-4 z-[1]">
                 {/* Card: Return 3 Tonnes */}
-                <div className="bg-white lg:bg-[#f5f6f6] flex flex-col gap-6 p-8 md:p-10 items-center justify-center rounded-[24px] border lg:border-none border-grey100 flex-1">
+                <div className="bg-white lg:bg-[#f5f6f6] flex flex-col gap-4 p-8 md:p-10 lg:p-[46px] items-center justify-center rounded-[24px] border lg:border-none border-grey100 flex-1">
                   <div className="ContentXLBold text-[#001a77] text-center">
                     <p>Return 3 Tonnes</p>
                     <p>Qualify for a Trip to Japan</p>
@@ -119,7 +118,7 @@ export default function HomeRewards() {
                 </div>
 
                 {/* Card: Return 10 Tonnes */}
-                <div className="bg-white lg:bg-[#f5f6f6] flex flex-col gap-6 p-8 md:p-10 items-center justify-center rounded-[24px] border lg:border-none border-grey100 flex-1">
+                <div className="bg-white lg:bg-[#f5f6f6] flex flex-col gap-4 p-8 md:p-10 lg:p-[46px] items-center justify-center rounded-[24px] border lg:border-none border-grey100 flex-1">
                   <div className="ContentXLBold text-[#001a77] text-center">
                     <p>Return 10 Tonnes</p>
                     <p>Qualify for Business Class</p>
@@ -139,8 +138,8 @@ export default function HomeRewards() {
             </div>
 
             {/* Bottom Card: Top 5 win */}
-            <div className="bg-white lg:bg-[#f5f6f6] flex flex-col md:justify-center
-             md:flex-row gap-6 h-auto items-center p-8 md:p-10 lg:py-10 rounded-[24px] border lg:border-none border-grey100">
+            <div className="h-[158px] bg-white lg:bg-[#f5f6f6] flex flex-col md:justify-center lg:justify-start
+             md:flex-row gap-6 h-auto items-center p-8 md:p-10 md:px-[64px] lg:p-5 lg:px-10 rounded-[24px]">
               <div className="shrink-0">
                 <Image src={templeCircle} alt="Trip Available" width={120} height={120} className="size-[120px]" />
               </div>
@@ -148,7 +147,7 @@ export default function HomeRewards() {
                 <h3 className="ContentXLBold lg:HeadingSBold">
                   Top 5 will win a Trip to Japan
                 </h3>
-                <p className="text-[16px] tracking-[-0.32px] font-normal leading-tight">
+                <p className="ContentSRegular">
                   (by total volume and eligibility)
                 </p>
               </div>

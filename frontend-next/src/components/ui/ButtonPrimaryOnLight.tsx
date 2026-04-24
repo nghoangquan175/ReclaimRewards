@@ -69,7 +69,7 @@ export const ButtonPrimaryOnLight: React.FC<ButtonProps> = ({
           text-magenta600 group-disabled:text-grey600
           ${currentSize.icon}
         `}>
-          {icon || <IconArrowRight className="size-6 md:size-7" />}
+          {icon || <IconArrowRight />}
         </div>
       )}
     </button>

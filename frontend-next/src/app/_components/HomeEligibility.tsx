@@ -9,7 +9,7 @@ import FAQSection from '@/components/sections/FAQSection';
  */
 const CheckItem = ({ checked, text }: { checked: boolean; text: string }) => (
   <div className="flex items-start gap-2 mt-1">
-    <span className={`ContentMRegular ${checked ? 'text-[#1a1a1a]' : 'text-grey600'} italic font-serif`}>
+    <span className={`ContentMRegular ${checked ? 'text-[#1a1a1a]' : 'text-grey600'}`}>
       {checked ? '✓' : '✗'}
     </span>
     <span className={`ContentMRegular ${checked ? 'text-[#1a1a1a]' : 'text-grey600'}`}>
@@ -93,23 +93,6 @@ export default function HomeEligibility() {
       )
     },
     {
-      question: "Eligible for Business Class",
-      answer: (
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-col">
-            <StatLine label="Previous Return" value="6t" />
-            <StatLine label="Target (+20%)" value="7.2t" />
-            <StatLine label="Actual Return" value="11t" />
-          </div>
-          <div className="flex flex-col">
-            <CheckItem checked={true} text="Meets 20% increase" />
-            <CheckItem checked={true} text="Exceeds 10t minimum" />
-            <CheckItem checked={true} text="Eligible to win business class trip" />
-          </div>
-        </div>
-      )
-    },
-    {
       question: "Misses Minimum Volume",
       answer: (
         <div className="flex flex-col gap-4">
@@ -126,6 +109,24 @@ export default function HomeEligibility() {
         </div>
       )
     },
+    {
+      question: "Eligible for Business Class",
+      answer: (
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-col">
+            <StatLine label="Previous Return" value="6t" />
+            <StatLine label="Target (+20%)" value="7.2t" />
+            <StatLine label="Actual Return" value="11t" />
+          </div>
+          <div className="flex flex-col">
+            <CheckItem checked={true} text="Meets 20% increase" />
+            <CheckItem checked={true} text="Exceeds 10t minimum" />
+            <CheckItem checked={true} text="Eligible to win business class trip" />
+          </div>
+        </div>
+      )
+    },
+
     {
       question: "Meets Volume, Not Growth",
       answer: (

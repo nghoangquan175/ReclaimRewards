@@ -19,6 +19,7 @@ interface SplitContentSectionProps {
   imageContainerClassName?: string;
   sectionClassName?: string;
   imageSizes?: string;
+  imageExtraContent?: React.ReactNode;
 }
 
 /**
@@ -39,6 +40,7 @@ export const SplitContentSection: React.FC<SplitContentSectionProps> = ({
   imageContainerClassName = '',
   sectionClassName = '',
   imageSizes = '(max-width: 1024px) 100vw, 50vw',
+  imageExtraContent,
 }) => {
   return (
     <section id={id} className={`bg-grey100 ${sectionClassName}`}>
@@ -66,7 +68,7 @@ export const SplitContentSection: React.FC<SplitContentSectionProps> = ({
               <ul className="flex flex-col gap-[10px] w-full">
                 {features.map((feature, index) => (
                   <li key={index} className="flex gap-[14px] items-start">
-                    <div className="bg-magenta600 rounded-full shrink-0 size-5 flex items-center justify-center mt-0.5">
+                    <div className="">
                       <Image
                         src={tickIcon}
                         alt=""
@@ -97,7 +99,7 @@ export const SplitContentSection: React.FC<SplitContentSectionProps> = ({
 
           {/* Image Container */}
           <div className={`
-            relative flex-1  md:min-h-[400px] rounded-[24px] overflow-hidden
+            relative flex-1 md:min-h-[400px] rounded-[24px] overflow-hidden
             ${imageContainerClassName}
           `}>
             <Image
@@ -105,8 +107,9 @@ export const SplitContentSection: React.FC<SplitContentSectionProps> = ({
               alt={imageAlt}
               fill
               sizes={imageSizes}
-              className="object-cover"
+              className="object-cover z-10"
             />
+            {imageExtraContent}
           </div>
 
         </div>

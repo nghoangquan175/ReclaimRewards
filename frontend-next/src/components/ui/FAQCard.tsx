@@ -33,7 +33,7 @@ export const FAQCard: React.FC<FAQCardProps> = ({ question, answer, className = 
           className={`
             bg-blue950 flex items-center justify-center rounded-full shrink-0 size-9 cursor-pointer
             transition-transform duration-300 ease-[cubic-bezier(0,0,0.58,1)]
-            ${isOpen ? 'rotate-45' : 'rotate-0'}
+            ${isOpen ? 'rotate-[-45deg]' : 'rotate-0'}
           `}
           aria-expanded={isOpen}
           onClick={() => setIsOpen(!isOpen)}

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import logoWhite from '@/assets/icons/logo-white.svg';
 import ReggieGas from '@/assets/images/RR_Reggie_Pose_a31.png';
-import japanPortal from '@/assets/images/tower-circle.jpg';
+import japanPortal from '@/assets/icons/tower-ellipse.svg';
 
 /**
  * HomeBanner - Hero section for the homepage.
@@ -32,7 +32,7 @@ export default function HomeBanner() {
           </Link>
 
           {/* Headline (Figma node 514:11353) */}
-          <h1 className="ContentXLBold md:ContentXLBold lg:HeadingXSBold text-white mt-8 md:mt-0">
+          <h1 className="HeadingXSBold text-white mt-8 md:mt-0">
             Turn recovered refrigerant into <br />
             rewards for your business
           </h1>
@@ -40,7 +40,7 @@ export default function HomeBanner() {
           {/* Action Button (Figma node 514:11354) */}
           <Link
             href="/#registration"
-            className="ContentMBold lg:HeadingXSBold bg-blue950 text-white rounded-[120px] px-[24px] h-[40px] lg:h-[60px] flex items-center justify-center whitespace-nowrap shrink-0 mt-8 md:mt-0 w-fit"
+            className="HeadingXSBold bg-blue950 text-white rounded-[120px] px-[24px] h-[40px] lg:h-[60px] flex items-center justify-center whitespace-nowrap shrink-0 mt-8 md:mt-0 w-fit"
           >
             Register by 30 June 2026
           </Link>
@@ -53,19 +53,19 @@ export default function HomeBanner() {
             alt="Reggie Mascot"
             width={379}
             height={560}
-            className="w-full h-full object-contain object-bottom absolute md:top-[33px] lg:top-[108px]"
+            className="w-full h-full object-contain object-bottom absolute md:top-[33px] lg:top-[109px]"
           />
         </div>
 
         {/* Japan Portal Circular Design - Figma node 798:5941 for tablet */}
-        <div className="hidden md:block absolute md:top-[5px] md:left-[495px] md:w-[350px] md:h-[350px] lg:top-[79.5px] lg:left-[959px] lg:w-[500px] lg:h-[500px] rounded-full md:border-[14px] lg:border-[20px] border-[#8BB8F8] overflow-hidden z-10 box-border pointer-events-none">
+        <div className="hidden md:block absolute md:top-[5px] md:left-[495px] md:w-[350px] md:h-[350px] lg:top-[79.5px] lg:left-[959px] lg:w-[500px] lg:h-[500px]">
           <Image
             src={japanPortal}
             alt="Japan Trip Reward"
             width={1882}
             height={1076}
-            className="absolute max-w-none md:top-[-94px] md:left-[-131px] lg:top-[-99px] lg:left-[-39px]"
-            style={{ width: '520px', height: '420px' }}
+            className=""
+
           />
         </div>
 
