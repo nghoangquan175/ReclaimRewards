@@ -32,7 +32,7 @@ export const ButtonPrimaryOnDark: React.FC<ButtonProps> = ({
       disabled={disabled}
       {...props}
     >
-      <div className="px-3 flex items-center justify-center">
+      <div className="px-3 flex-1 flex items-center justify-center">
         <span className="ContentMBold whitespace-nowrap">
           {children}
         </span>

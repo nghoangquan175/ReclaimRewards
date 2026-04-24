@@ -26,11 +26,15 @@ export default function Home() {
       {/* Eligibility Section */}
       <HomeEligibility />
 
-      {/* Japan Trip Details Section */}
-      <HomeJapanTrip />
-
-      {/* Sustainability / Why it Matters Section */}
-      <HomeSustainability />
+      {/* Japan Trip & Sustainability Sections (Reordered for Mobile/Tablet) */}
+      <div className="flex flex-col">
+        <div className="order-2 lg:order-1">
+          <HomeJapanTrip />
+        </div>
+        <div className="order-1 lg:order-2">
+          <HomeSustainability />
+        </div>
+      </div>
 
       {/* FAQ Section */}
       <HomeFAQsection />

@@ -42,17 +42,17 @@ export const SplitContentSection: React.FC<SplitContentSectionProps> = ({
 }) => {
   return (
     <section id={id} className={`bg-grey100 ${sectionClassName}`}>
-      <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-[80px]">
+      <div className="container mx-auto max-w-[1440px] px-6 md:px-10 lg:px-[80px]">
         <div className={`
           bg-white flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} 
-          items-stretch justify-between gap-10 p-10 md:p-[30px] rounded-[24px] 
+          items-stretch justify-between gap-10 p-10 md:px-10 md:py-[30px] rounded-[24px] 
           min-h-[566px] overflow-hidden
         `}>
 
           {/* Text Content */}
           <div className="flex flex-col flex-1 gap-8 items-start justify-between">
             <div className="flex flex-col gap-8 items-start w-full">
-              <h2 className="HeadingMBold text-blue950 max-w-[559px] leading-tight">
+              <h2 className="HeadingMBold text-blue950 w-full text-center lg:text-left">
                 {title}
               </h2>
 
@@ -97,7 +97,7 @@ export const SplitContentSection: React.FC<SplitContentSectionProps> = ({
 
           {/* Image Container */}
           <div className={`
-            relative flex-1 min-h-[300px] lg:min-h-full rounded-[24px] overflow-hidden
+            relative flex-1  md:min-h-[400px] rounded-[24px] overflow-hidden
             ${imageContainerClassName}
           `}>
             <Image

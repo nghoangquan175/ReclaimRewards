@@ -36,9 +36,9 @@ export default function HomeEligibility() {
   const eligibilityCards = [
     {
       iconContent: (
-        <div className="flex flex-col items-center justify-center text-[#001a77] text-center">
-          <span className="font-bold text-[64px] tracking-[-1.92px] leading-none">20%</span>
-          <span className="font-normal text-[24px] tracking-[-0.72px] leading-none mt-2">MORE</span>
+        <div className="flex flex-col gap-2 items-center justify-center text-[#001a77] text-center">
+          <span className="font-bold text-[48px] tracking-[-1.44px] leading-none">20%</span>
+          <span className="ContentXLRegular tracking-[-0.4px] leading-none">MORE</span>
         </div>
       ),
       description: (
@@ -50,19 +50,19 @@ export default function HomeEligibility() {
     },
     {
       iconContent: (
-        <div className="flex flex-col items-center justify-center text-[#001a77] text-center">
-          <span className="font-normal text-[24px] tracking-[-0.72px] leading-none">MINIMUM</span>
-          <span className="font-bold text-[36px] tracking-[-1.08px] leading-none mt-1">VOLUME</span>
-          <span className="font-bold text-[64px] tracking-[-1.92px] leading-none mt-1">3T</span>
+        <div className="flex flex-col gap-2 items-center justify-center text-[#001a77] text-center">
+          <span className="ContentXLRegular tracking-[-0.4px] leading-none">MINIMUM</span>
+          <span className="HeadingSBold tracking-[-0.84px] leading-none">VOLUME</span>
+          <span className="font-bold text-[48px] tracking-[-1.44px] leading-none">3T</span>
         </div>
       ),
       description: "Meet the minimum volume threshold",
     },
     {
       iconContent: (
-        <div className="flex flex-col items-center justify-center text-[#001a77] text-center">
-          <span className="font-normal text-[24px] tracking-[-0.72px] leading-none">REGISTERED</span>
-          <span className="font-bold text-[36px] tracking-[-1.08px] leading-none mt-2">BUSINESS</span>
+        <div className="flex flex-col gap-2 items-center justify-center text-[#001a77] text-center">
+          <span className="ContentXLRegular tracking-[-0.4px] leading-none uppercase">Registered</span>
+          <span className="HeadingSBold tracking-[-0.84px] leading-none uppercase">Business</span>
         </div>
       ),
       description: (
@@ -146,10 +146,10 @@ export default function HomeEligibility() {
   ];
 
   return (
-    <section id="eligibility" className="bg-grey100 py-[60px]">
-      <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-[80px]">
+    <section id="eligibility" className="bg-grey100 py-[60px] lg:py-20">
+      <div className="container mx-auto max-w-[1440px] px-6 md:px-10 lg:px-[80px]">
 
-        <div className="flex flex-col gap-15">
+        <div className=" flex flex-col gap-10 md:gap-[40px] lg:gap-16">
           {/* Heading Container */}
           <div className="w-full">
             <h2 className="HeadingLBold text-blue950 text-center">
@@ -157,7 +157,7 @@ export default function HomeEligibility() {
             </h2>
           </div>
           {/* Eligibility Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5">
             {eligibilityCards.map((card, index) => (
               <InfoCard
                 key={index}

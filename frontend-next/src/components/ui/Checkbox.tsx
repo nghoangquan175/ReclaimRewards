@@ -39,7 +39,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           <svg
             className={`
               absolute size-3.5 pointer-events-none transition-all duration-300 ease-out
-              ${disabled ? 'text-grey400 opacity-100' : 'text-white opacity-0 peer-checked:opacity-100'}
+              ${disabled ? 'opacity-0' : 'text-white opacity-0 peer-checked:opacity-100'}
             `}
             viewBox="0 0 14 14"
             fill="none"

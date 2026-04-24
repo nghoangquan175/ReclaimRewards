@@ -5,15 +5,15 @@ export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     screens: {
-      '1280': '1280px',
-      '1024': '1024px',
-      '768': '768px',
-      '600': '600px',
       '390': '390px',
       '400': '400px',
       '410': '410px',
       '430': '430px',
-      '1440': '1440px',
+      'sm': '600px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1440px',
     },
     extend: {
       fontFamily: {

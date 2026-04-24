@@ -16,27 +16,27 @@ interface InfoCardProps {
  * InfoCard component for Home Services and Home Eligibility sections.
  * Based on Figma node 675:3721 and 675:3832.
  */
-export const InfoCard: React.FC<InfoCardProps> = ({ 
-  step, 
-  title, 
-  description, 
-  iconSrc, 
+export const InfoCard: React.FC<InfoCardProps> = ({
+  step,
+  title,
+  description,
+  iconSrc,
   iconContent,
   children,
   className = ''
 }) => {
   return (
-    <div className={`bg-white flex flex-col gap-6 p-6 rounded-[24px] w-full h-full shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden ${className}`}>
+    <div className={`bg-white flex flex-col gap-6 p-4 rounded-[24px] w-full h-full overflow-hidden ${className}`}>
       {/* Top Section: Icon Area */}
-      <div className="bg-blue300 h-[260px] relative rounded-[8px] overflow-hidden flex items-center justify-center">
+      <div className="bg-blue300 h-[200px] relative rounded-[8px] overflow-hidden flex items-center justify-center">
         {/* Hexagon Background */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <Image
             src={hexagon}
             alt=""
-            width={200}
-            height={200}
-            className="w-[200px] h-auto"
+            width={163}
+            height={163}
+            className="w-[163px] h-auto"
           />
         </div>
 
@@ -57,9 +57,9 @@ export const InfoCard: React.FC<InfoCardProps> = ({
 
         {/* Optional Step Number Badge */}
         {step !== undefined && (
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[100px] z-20">
-            <div className="bg-blue950 rounded-full w-[44px] h-[44px] flex items-center justify-center">
-              <span className="text-white font-bold text-[24px]">
+          <div className="absolute top-[15px] left-1/2 -translate-x-1/2 z-20">
+            <div className="bg-blue950 rounded-full w-[36px] h-[36px] flex items-center justify-center">
+              <span className="text-white font-bold text-[20px] leading-none">
                 {step}
               </span>
             </div>
@@ -70,7 +70,7 @@ export const InfoCard: React.FC<InfoCardProps> = ({
       {/* Bottom Section: Text Content */}
       <div className="flex flex-col gap-4 text-center">
         {title && (
-          <h3 className="HeadingXSBold text-blue950">
+          <h3 className="ContentXLBold text-blue950">
             {title}
           </h3>
         )}

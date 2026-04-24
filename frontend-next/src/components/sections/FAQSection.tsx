@@ -24,9 +24,9 @@ export default function FAQSection({ items, cardClassName }: FAQSectionProps) {
   const rightColumn = items.slice(midpoint);
 
   return (
-    <div className="flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-x-[24px] lg:gap-y-[16px] w-full items-start">
+    <div className="flex flex-col md:flex-row gap-5 lg:gap-x-5 lg:gap-y-4 w-full items-start">
       {/* Left Column / Mobile Column */}
-      <div className="flex flex-col gap-[16px] flex-1 w-full">
+      <div className="flex flex-col gap-5 flex-1 w-full">
         {leftColumn.map((item, index) => (
           <FAQCard
             key={`left-${index}`}
@@ -36,7 +36,7 @@ export default function FAQSection({ items, cardClassName }: FAQSectionProps) {
           />
         ))}
         {/* On mobile, show the rest of the items in this single column */}
-        <div className="flex md:hidden flex-col gap-[16px] w-full">
+        <div className="flex md:hidden flex-col gap-5 w-full">
           {rightColumn.map((item, index) => (
             <FAQCard
               key={`right-mob-${index}`}
@@ -47,7 +47,7 @@ export default function FAQSection({ items, cardClassName }: FAQSectionProps) {
           ))}
         </div>
       </div>
-      
+
       {/* Right Column (Hidden on Mobile) */}
       <div className="hidden md:flex flex-col gap-[16px] flex-1 w-full">
         {rightColumn.map((item, index) => (

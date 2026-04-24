@@ -25,8 +25,8 @@ export const FAQCard: React.FC<FAQCardProps> = ({ question, answer, className = 
         ${className || 'bg-grey50'}
       `}
     >
-      <div className="flex justify-between items-center w-full gap-6 pb-6">
-        <div className="flex-1 ContentLBold text-[#1a1a1a] select-none h-[36px] flex items-center">
+      <div className="flex justify-between items-center w-full gap-4 pb-5">
+        <div className="flex-1 ContentLBold text-[#1a1a1a] select-none min-h-[36px] flex items-center">
           {question}
         </div>
         <button

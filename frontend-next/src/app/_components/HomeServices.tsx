@@ -16,21 +16,26 @@ export default function HomeServices() {
   const steps = [
     {
       step: 1,
-      title: 'Register your business',
-      description: 'Sign up to the program by providing your business details.',
+      title: 'Register',
+      description: 'Register your business here',
       iconSrc: step1,
       showButton: true,
     },
     {
       step: 2,
-      title: 'Return to wholesalers',
-      description: 'Drop off recovered refrigerant at participating wholesalers.',
+      title: 'Recover and Return',
+      description: (
+        <>
+          Return refrigerant via participating wholesalers during return period’ <br />
+          (1 July 2026 - 30 June 2027)
+        </>
+      ),
       iconSrc: step2,
       showButton: false,
     },
     {
       step: 3,
-      title: 'Earn rewards',
+      title: 'Earn Rewards',
       description: 'You can then earn points, and even unlock a trip to Japan',
       iconSrc: step3,
       showButton: false,
@@ -38,15 +43,13 @@ export default function HomeServices() {
   ];
 
   return (
-    <section id="how-it-works" className="bg-grey100 pt-20 pb-15">
-      <div className="container mx-auto max-w-[1440px] px-6 md:px-12 lg:px-[80px] flex flex-col gap-12">
-        <div className="flex flex-col md:flex-row justify-center items-center gap-6 overflow-hidden">
-          <h2 className="HeadingLBold text-blue950 text-center">
-            How it Works
-          </h2>
-        </div>
+    <section id="how-it-works" className="bg-grey100 py-[60px] lg:py-20">
+      <div className="container mx-auto max-w-[1440px] px-6 md:px-10 lg:px-[80px] flex flex-col gap-10 md:gap-[40px] lg:gap-16 items-center">
+        <h2 className="HeadingLBold text-blue950 text-center">
+          How it Works
+        </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[10px] w-full">
           {steps.map((item) => (
             <InfoCard
               key={item.step}
@@ -57,7 +60,7 @@ export default function HomeServices() {
             >
               {item.showButton && (
                 <div className="flex justify-center w-full">
-                  <ButtonSecondary 
+                  <ButtonSecondary
                     className="w-full"
                     onClick={() => scrollToSection('registration')}
                   >

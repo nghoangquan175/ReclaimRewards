@@ -135,7 +135,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
             value={value}
             defaultValue={defaultValue}
             className={`
-              w-full bg-transparent border-none focus:outline-none focus:ring-0 
+              w-full bg-transparent border-none focus:outline-none focus:ring-0 p-0
               ContentMRegular transition-colors duration-300 
               ${currentStyle.text} ${currentStyle.placeholder}
               disabled:cursor-not-allowed
