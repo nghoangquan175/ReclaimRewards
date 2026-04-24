@@ -85,13 +85,13 @@ export default function HomeRegistration() {
     };
 
     return (
-        <section id="registration" className="bg-grey100 py-[60px] px-6 md:px-12 lg:px-[40px] flex justify-center">
+        <section id="registration" className="bg-grey100 py-[60px] px-6 md:px-10 flex justify-center">
             <div className="w-full max-w-[845px] flex flex-col items-center">
 
                 {/* Top Header Bar */}
-                <div className="bg-blue950 w-full h-[80px] flex items-center justify-between px-6 md:px-10 rounded-t-[24px] overflow-hidden">
-                    <div className="flex items-center gap-2">
-                        <div className="ContentXLBold text-white">
+                <div className="bg-blue950 w-full h-[80px] flex items-center justify-between px-3 md:px-5 lg:px-10 rounded-t-[24px] overflow-hidden">
+                    <div className="flex items-center gap-1">
+                        <div className="ContentXLBold text-white whitespace-nowrap">
                             WIN A TRIP TO
                         </div>
                         {/* Japan Logo Icon */}
@@ -99,23 +99,21 @@ export default function HomeRegistration() {
                             <Image
                                 src={japanIcon}
                                 alt="Japan"
-                                fill
+                                width={107}
+                                height={40}
                                 className="object-contain object-left"
                             />
                         </div>
                     </div>
-                    <span className="ContentXLBold text-white hidden md:block">
+                    <span className="ContentXLBold text-white whitespace-nowrap">
                         RETURN FLIGHTS FOR TWO INCLUDED
-                    </span>
-                    <span className="ContentMBold text-white md:hidden text-right leading-tight">
-                        FLIGHTS FOR TWO INCLUDED
                     </span>
                 </div>
 
                 {/* Main Form Container */}
-                <div className="bg-white w-full rounded-b-[24px] p-6 md:p-10 shadow-sm flex flex-col gap-10 items-center">
+                <div className="bg-white w-full rounded-b-[24px] p-4 md:p-5 lg:p-10 shadow-sm flex flex-col gap-10 items-center">
 
-                    <h2 className="HeadingLBold text-blue950 text-center w-full">
+                    <h2 className="HeadingLBold md:text-[36px] text-blue950 text-center w-full">
                         Register Your Business
                     </h2>
 
@@ -123,7 +121,7 @@ export default function HomeRegistration() {
 
                         <div className="flex flex-col gap-10">
                             {/* Name Fields (2 columns) */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-8">
                                 <InputText
                                     label="First Name"
                                     placeholder="Daniel"
@@ -143,7 +141,7 @@ export default function HomeRegistration() {
                             </div>
 
                             {/* Email and Phone (2 columns) */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-8">
                                 <InputText
                                     label="Work Email"
                                     placeholder="daniel@gmail.com"
@@ -173,7 +171,7 @@ export default function HomeRegistration() {
                             />
 
                             {/* Company Info (2 columns) */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-8">
                                 <InputText
                                     label="Company Name"
                                     placeholder="Input"
@@ -197,13 +195,12 @@ export default function HomeRegistration() {
                                 <p className="ContentMRegular text-grey950">
                                     Which wholesaler do you typically return reclaim cylinders through? (check all that apply)
                                 </p>
-                                <div className="flex flex-wrap items-center gap-4 md:gap-8">
+                                <div className="flex flex-wrap items-center gap-4 md:gap-5 lg:gap-8">
                                     <div className="bg-grey50 rounded-[8px] pl-3 pr-6 py-3 flex items-center gap-4">
                                         <Checkbox
                                             label="Actrol/Reece"
                                             checked={selectedWholesalers.includes('Actrol/Reece')}
                                             onChange={() => handleWholesalerToggle('Actrol/Reece')}
-                                            disabled={selectedWholesalers.includes('Other')}
                                         />
                                     </div>
                                     <div className="bg-grey50 rounded-[8px] pl-3 pr-6 py-3 flex items-center gap-4">
@@ -211,7 +208,6 @@ export default function HomeRegistration() {
                                             label="Airefrig"
                                             checked={selectedWholesalers.includes('Airefrig')}
                                             onChange={() => handleWholesalerToggle('Airefrig')}
-                                            disabled={selectedWholesalers.includes('Other')}
                                         />
                                     </div>
                                     <div className="bg-grey50 rounded-[8px] pl-3 pr-6 py-3 flex items-center gap-4">
@@ -219,10 +215,9 @@ export default function HomeRegistration() {
                                             label="Other"
                                             checked={selectedWholesalers.includes('Other')}
                                             onChange={() => handleWholesalerToggle('Other')}
-                                            disabled={selectedWholesalers.includes('Actrol/Reece') || selectedWholesalers.includes('Airefrig')}
                                         />
                                     </div>
-                                    <div className="flex-1 min-w-[200px] flex items-center gap-3">
+                                    <div className="flex-1 flex items-center gap-3">
                                         <span className="ContentMRegular text-grey950 whitespace-nowrap">If Other</span>
                                         <InputText
                                             placeholder="Input"
@@ -277,8 +272,8 @@ export default function HomeRegistration() {
                             </div>
 
                             <div className="flex flex-col gap-2">
-                                <Checkbox 
-                                    {...register('termsConsent')} 
+                                <Checkbox
+                                    {...register('termsConsent')}
                                     label={
                                         <p className="ContentMRegular text-grey950">
                                             I agree to the <a href="#" className="text-magenta600 underline">Terms & Conditions</a> and acknowledge that my personal information will be collected and used in accordance with the <a href="#" className="text-magenta600 underline">A-Gas Privacy Policy.</a>
@@ -302,9 +297,9 @@ export default function HomeRegistration() {
                             <ButtonPrimaryOnLight
                                 type="submit"
                                 size="large"
-                                className="w-full md:w-fit"
+                                className="w-full md:w-fit "
                             >
-                                Join The Challenge
+                                <p className="text-[22.4px]">Join The Challenge</p>
                             </ButtonPrimaryOnLight>
                         </div>
 

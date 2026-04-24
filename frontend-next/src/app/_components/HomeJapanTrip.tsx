@@ -21,13 +21,13 @@ export default function HomeJapanTrip() {
   return (
     <SplitContentSection
       id="japan-trip"
-      title="Win a Trip to Japan, Return Flights for Two Included"
+      title={<div>Win a Trip to Japan, Return <br /> Flights for Two Included</div>}
       features={features}
       imageSrc={templeImg}
       imageAlt="Japan Temple"
       buttonText="Register Your Business"
       onButtonClick={() => scrollToSection('registration')}
-      sectionClassName='pt-[60px] pb-[20px]'
+      sectionClassName='pt-[20px] pb-[60px] lg:pt-[60px] lg:pb-[20px]'
       reverse={false}
     />
   );
